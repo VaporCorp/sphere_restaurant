@@ -1,0 +1,119 @@
+:root {
+    --gold: #BD9561;
+    --brown: #725330;
+}
+
+.marquee {
+    position: absolute;
+    bottom: 0;
+    font-size: 80px;
+    .marquee__inner {
+        display: flex;
+        gap: 40px;
+    }
+}
+
+.menu {
+    display: none;
+    .marquee__cta {
+        text-decoration: none;
+        &:before {
+            position: absolute;
+            left: 0;
+            display: block;
+            content: '';
+            width: 100%;
+        }
+    }
+    .marquee__inner {
+        span {
+            line-height: 1.5;
+            padding: 0 40px;
+        }
+        span:nth-of-type(odd){
+            background-color: #FFF;
+            color: var(--gold);
+        }
+        span:nth-of-type(even){
+            color: #FFF;
+        }
+    }
+}
+
+.menu.open {
+    width: 100%;
+    position: fixed;
+    pointer-events: all;
+    z-index: 100;
+    background-color: #bd9561;
+    top: 0;
+    left:0;
+    flex-direction: row;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: auto 0 30px auto;
+    padding: 10vh 15vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    div ul {
+        box-sizing: border-box;
+        width: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-direction: column;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: auto 0 30px auto;
+        max-width: none;
+        padding-left: 0;
+        position: relative;
+        li {
+            line-height: 1.05;
+            margin: 2.5px 0;
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 3.125rem;
+                font-family: Futura-Std-Book, sans-serif;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    div address {
+        font-size: 0.875rem;
+        text-align: right;
+        color: #fff;
+        font-family: Futura-Std-Book, sans-serif;
+        line-height: 2;
+    }
+}
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.marquee__inner {
+    display: flex;
+    width: max-content;
+    animation: scrolling 10s linear infinite;
+}
+.marquee-text {
+    padding-right: 50px;
+}
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee .marquee__inner {
+    animation-duration: 30s;
+}

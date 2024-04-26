@@ -1,0 +1,48 @@
+@media (any-pointer: fine) {
+    #custom-cursor {
+        opacity: 1;
+    }
+    .custom-cursor {
+        display: block;
+        pointer-events: none;
+        color: #000;
+    }
+    .cursor__side {
+        position: absolute;
+        top: 50%;
+        width: 5px;
+        height: 1px;
+        background: #000;
+        opacity: 0;
+    }
+    .cursor__inner--circle {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+    }
+
+    .cursor__inner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        pointer-events: none;
+        background: #fff;
+        mix-blend-mode: difference;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+    }
+
+    .cursor__side--left {
+        right: calc(100% + 5px);
+    }
+
+    .cursor__side--right {
+        left: calc(100% + 5px);
+    }
+
+    .custom-cursor .hovered {
+        transform: scale(1.9) translate(-25%, -25%);
+        transform-origin: center;
+    }
+}

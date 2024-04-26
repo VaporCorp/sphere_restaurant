@@ -5,9 +5,9 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://restaurantsphere.com/favicon-32x32.png"
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png"
           data-no-reload>
-    <link rel="icon" type="image/png" sizes="16x16" href="https://restaurantsphere.com/favicon-16x16.png"
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png"
           data-no-reload>
     <meta name="application-name" content="Sphère" data-no-reload>
     <meta name="msapplication-TileColor" content="#BD9561" data-no-reload>
@@ -35,7 +35,9 @@
     <link rel="stylesheet" href="../assets/styles/reset.css">
     <link rel="stylesheet" href="../assets/styles/fonts.css">
     <link rel="stylesheet" href="../assets/styles/header.css">
-    <link rel="stylesheet" href="../assets/styles/index.css">
+    <link rel="stylesheet" href="../assets/styles/burger-menu.css">
+    <link rel="stylesheet" href="../assets/styles/cursor.css">
+    <link rel="stylesheet" href="../assets/styles/contact.css">
     <link rel="stylesheet" href="../assets/styles/footer.css">
 </head>
 <body>
@@ -54,7 +56,7 @@
         </a>
     </nav>
     <div class="header__div--logo">
-        <a href="https://spherev2.tousatable.fr/" class="custom-logo-link" rel="home" aria-current="page">
+        <a href="../index.html" class="custom-logo-link" rel="home" aria-current="page">
             <img src="../assets/images/logo-sphere-blanc-web.svg"
                  width="156"
                  height="130"
@@ -68,31 +70,27 @@
     </div>
 </div>
 <header class="header header-contact" id="header">
-    <div class="header__div--carousel">
-        <div class="div-carousel__div-wrapper">
-            <div class="div-wrapper__div-slide">
-                <figure class="div-slide__figure">
-                    <img src="../assets/images/sphere-restaurant-paris-chef-DSC0523.webp"
-                         class="figure__img"
-                         alt="sphere restaurant paris chef DSC0523 - Sphère, le restaurant Paris gastronomique"
-                         decoding="async"
-                         loading="lazy"
-                         title="Sphère, le restaurant Paris gastronomique">
-                </figure>
-                <h3 class="div-slide__title-contact h3">CONTACTEZ LE SPHÈRE RESTAURANT</h3>
-            </div>
-        </div>
+    <div class="header-contact__div-slide">
+        <figure class="div-slide__figure">
+            <img src="../assets/images/sphere-restaurant-paris-chef-DSC0523.webp"
+                 class="figure__img"
+                 alt="sphere restaurant paris chef DSC0523 - Sphère, le restaurant Paris gastronomique"
+                 decoding="async"
+                 loading="lazy"
+                 title="Sphère, le restaurant Paris gastronomique">
+        </figure>
     </div>
+    <h1 class="div-slide__title-contact h1">CONTACTEZ LE SPHÈRE RESTAURANT</h1>
 </header>
 <main>
-    <section class="main__section-presentation">
-        <div class="section-presentation__div-left">
+    <section class="main__section-contact">
+        <div class="section-contact__div-left">
             <div class="div-left__div-content">
                 <h2 class="div-left__h2"> Un lieu incontournable à Paris
                 </h2>
             </div>
             <p class="div-left__div-content div-left__p"><strong class="section-presentation__strong">Tous les soirs au dîner et déjeuners du Samedi et Dimanche</strong>, le restaurant parisien gastronomique SPHERE vous propose
-                un menu dégustation Carte Blanche réalisé par le chef  Tetsuya YOSHIDA.
+                <span>un menu dégustation Carte Blanche réalisé par le chef  Tetsuya YOSHIDA.</span>
             </p>
             <div class="div-left__div-content div-left__div-cta section-cta">
                 <a class="" href="mailto:contact@restaurantsphere.com"
@@ -115,25 +113,26 @@
                     <span class="button-label">Envoyer un message</span>
                 </a>
             </div>
-            <figure class="div-content__video">
-                <video controls
-                       poster="https://restaurantsphere.com/app/uploads/2023/11/SPHERE-30SEC-16-9-V2-720-web.webp"
-                       src="https://restaurantsphere.com/app/uploads/2023/10/SPHERE-30SEC-16-9-V2-720-web.mp4"
-                       playsinline>
-                </video>
+            <figure class="div-content__figure">
+                <img src="../assets/images/sphere-restaurant-paris-chefs-DSC0672-1200x1800.webp"
+                     class="figure__img"
+                     alt="sphere restaurant paris chefs DSC0672 1200x1800 - Contactez le Sphère Restaurant"
+                     decoding="async"
+                     loading="lazy"
+                     title="sphere restaurant paris chefs DSC0672 1200x1800 - Contactez le Sphère Restaurant">
             </figure>
         </div>
-        <div class="section-presentation__div-right">
+        <div class="section-contact__div-right">
             <figure class="div-right__figure">
                 <img decoding="async"
-                     src="https://restaurantsphere.com/app/uploads/2023/03/sphere-restaurant-salle-DSC2777-1200x1800.jpg"
+                     src="../assets/images/sphere-restaurant-paris-plat-DSC0691-1200x1800.webp"
                      class=""
                      alt="La salle &eacute;l&eacute;gante et chic du restaurant Gastronomique Sph&egrave;re &agrave; Paris"
                      title="La salle &eacute;l&eacute;gante et chic du restaurant Gastronomique Sph&egrave;re &agrave; Paris">
             </figure>
             <div class="div-right__div-text">
                 <p>18, rue la Boetie, 75008 Paris</p>
-                <p>Tel : <a class="section-presentation__links" href="tel:01%2044%2090%2002%2095"
+                <p>Tel : <a class="section-presentation__links" href="tel:0144900295"
                             title="Appelez-nous">01 44 90 02 95</a>
                 </p>
                 <p>Ouvert du Mardi au Dimanche : 12:00-14:30 et
@@ -161,18 +160,21 @@
                             </g>
                         </g>
                     </svg>
-                    <span class="button-label">R&eacute;servation</span>
+                    <span class="button-label">Je r&eacute;serve une table</span>
                 </a>
             </div>
         </div>
     </section>
+    <figure class="main__figure">
+        <img src="../assets/images/restaurant-paris-sphere-plat-DSC6559-1200x800.webp" alt="restaurant paris sphere plat DSC6559 1200x800 - Contactez le Sphère Restaurant" title="restaurant paris sphere plat DSC6559 1200x800 - Contactez le Sphère Restaurant">
+    </figure>
 </main>
 <footer class="footer">
     <div class="footer__div-site-logo">
-        <a href="https://restaurantsphere.com" class="" rel="home" aria-current="page"
+        <a href="../index.html" class="" rel="home" aria-current="page"
            aria-label="Voir le site : Sphère">
             <picture class="">
-                <img src="https://restaurantsphere.com/app/themes/sphere/assets/images/logo-black-sphere.webp"
+                <img src="../assets/images/LOGO%20SPHERE%20-%20WEB.svg"
                      loading="lazy"
                      alt="SPHERE | Restaurant à Paris, sensation gastronomique dans le 8e"
                      decoding="async">
@@ -250,16 +252,13 @@
                     <a href="https://restaurantsphere.com/notre-menu/">La Carte</a>
                 </li>
                 <li>
-                    <a href="https://restaurantsphere.com/restaurant-gastronomique/">Le Restaurant</a>
+                    <a href="./restaurant-gastronomique.html">Le Restaurant</a>
                 </li>
                 <li>
                     <a target="_blank" rel="noopener" href="https://bookings.zenchef.com/shop?rid=358497">Offrez le Sphère</a>
                 </li>
                 <li>
-                    <a href="https://restaurantsphere.com/presse/">La Presse</a>
-                </li>
-                <li>
-                    <a href="https://restaurantsphere.com/contact/">Contact</a>
+                    <a href="./contact.html">Contact</a>
                 </li>
             </ul>
             <div>
@@ -274,6 +273,25 @@
             </div>
         </div>
     </nav>
+
+    <div class="marquee">
+        <a class="marquee__cta" href="https://bookings.zenchef.com/results?rid=358497" title="Réservation">
+            <div class="marquee__inner">
+                <span>Réservation</span>
+                <span>Réservation</span>
+                <span>Réservation</span>
+                <span>Réservation</span>
+                <span>Réservation</span>
+                <span>Réservation</span>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="custom-cursor">
+    <div class="cursor__inner cursor__inner--circle" id="custom-cursor">
+        <div class="cursor__side cursor__side--left"></div>
+        <div class="cursor__side cursor__side--right"></div>
+    </div>
 </div>
 <script src="../script.js"></script>
 </body>
