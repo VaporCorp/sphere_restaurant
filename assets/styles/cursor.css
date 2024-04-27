@@ -41,7 +41,7 @@
         left: calc(100% + 5px);
     }
 
-    .custom-cursor .hovered {
+    .cursor .hovered {
         transform: scale(1.9) translate(-25%, -25%);
         transform-origin: center;
     }

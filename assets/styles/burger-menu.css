@@ -6,7 +6,11 @@
 .marquee {
     position: absolute;
     bottom: 0;
-    font-size: 80px;
+    right: 0;
+    font-size: 70px;
+    border-top: 1px solid white; /* Ajoute une ligne blanche au-dessus */
+    border-bottom: 1px solid white; /* Ajoute une ligne blanche en-dessous */
+
     .marquee__inner {
         display: flex;
         gap: 40px;
@@ -52,7 +56,7 @@
     height: 100vh;
     box-sizing: border-box;
     margin: auto 0 30px auto;
-    padding: 10vh 15vw;
+    padding: 10vh 6vw;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -93,17 +97,21 @@
     }
 }
 
+.header-restaurant .marquee {
+    border: none;
+}
+
 .marquee {
     overflow: hidden;
     white-space: nowrap;
+    width: 100%;
 }
 .marquee__inner {
     display: flex;
-    width: max-content;
     animation: scrolling 10s linear infinite;
 }
 .marquee-text {
-    padding-right: 50px;
+    padding-right: 0;
 }
 @keyframes scrolling {
     0% {

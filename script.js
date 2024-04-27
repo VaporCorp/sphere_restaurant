@@ -1,3 +1,5 @@
+/* Navbar */
+
 let header = document.getElementById("header__navbar");
 let scrollDistOpen = 200;
 
@@ -10,6 +12,8 @@ window.addEventListener("scroll", function() {
     }
 });
 
+/* Burger menu */
+
 const menuBtn = document.querySelector('.menu-btn');
 const navBar = document.querySelector('.header__div-bar');
 const menu = document.querySelector('.menu');
@@ -19,6 +23,8 @@ menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('open');
     menu.classList.toggle('open');
 });
+
+/* Cursor */
 
 const delay = 250
 
@@ -60,4 +66,20 @@ function throttle(callback, limit) {
 
 window.addEventListener("mousemove", (e) => {
     throttle(getDimensions(e), delay)
+});
+
+/* Image scroll and mouse track */
+
+const gallery = document.querySelector('.section-chief__div-dishes');
+gallery.addEventListener('mousemove', function(event) {
+    const mouseX = event.clientX - gallery.offsetLeft;
+
+    const proportion = mouseX / gallery.offsetWidth;
+
+    const translateX = proportion * 340;
+
+    const images = document.querySelectorAll('.div-dishes__figure');
+    images.forEach(function(image) {
+        image.style.transform = `translate3d(-${translateX}px, 0px, 0px)`;
+    });
 });
