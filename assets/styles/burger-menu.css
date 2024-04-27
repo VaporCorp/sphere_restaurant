@@ -5,7 +5,7 @@
 
 .marquee {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     right: 0;
     font-size: 70px;
     border-top: 1px solid white; /* Ajoute une ligne blanche au-dessus */
@@ -76,24 +76,63 @@
         position: relative;
         li {
             line-height: 1.05;
-            margin: 2.5px 0;
+            margin: 6px 0;
             a {
                 color: #fff;
                 text-decoration: none;
-                font-size: 3.125rem;
+                font-size: 1.75rem;
                 font-family: Futura-Std-Book, sans-serif;
+                padding: 3px 6px;
                 &:hover {
                     text-decoration: underline;
                 }
             }
         }
     }
+    .menu-address {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: flex-end;
+    }
+    .address {
+        width: 40%;
+    }
+    address {
+        a {
+            text-decoration: underline;
+            color: #FFF;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    div ul.secondary-menu {
+        text-align: left;
+        position: absolute;
+        top: 50%;
+        left: 6vw;
+        align-items: flex-start;
+        li {
+            a {
+                font-size: 1.125rem
+            }
+        }
+    }
+
     div address {
         font-size: 0.875rem;
         text-align: right;
         color: #fff;
         font-family: Futura-Std-Book, sans-serif;
         line-height: 2;
+    }
+
+    .secondary-menu {
+        li {
+            font-size: 1.125rem;
+        }
     }
 }
 
@@ -108,7 +147,7 @@
 }
 .marquee__inner {
     display: flex;
-    animation: scrolling 10s linear infinite;
+    animation: scrolling 4s linear infinite;
 }
 .marquee-text {
     padding-right: 0;
@@ -122,6 +161,51 @@
     }
 }
 
-.marquee .marquee__inner {
-    animation-duration: 30s;
+@media screen and (max-width: 992px){
+    .menu.open {
+        div ul.secondary-menu {
+            text-align: left;
+            position: relative;
+            top: 50%;
+            left: unset;
+            align-items: flex-end;
+        }
+        .address {
+            width: 80%;
+            span, small {
+            display: inline-block;
+            }
+            small {
+                font-size: 80%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu.open {
+        div ul:not(.secondary-menu) {
+            li {
+                a {
+                    font-size: 1.75rem;
+                }
+            }
+        }
+        address {
+            .address-infos {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu.open {
+        & div ul {
+            text-align: center;
+            & li a {
+                font-size: 1.6rem;
+            }
+        }
+    }
 }

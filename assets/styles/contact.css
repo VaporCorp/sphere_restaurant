@@ -206,10 +206,6 @@ img {
     object-position: center;
 }
 
-.footer {
-    margin: 45px;
-}
-
 @media screen and (max-width: 992px) {
     .header-contact {
         .div-slide__title-contact {
@@ -322,14 +318,6 @@ img {
     .section-cta {
         a {
             font-size: 1.5rem;
-        }
-    }
-
-    .footer {
-        & .site-info--top, & .site-info--bottom {
-            & .footer-navigation-wrapper {
-                flex-direction: column;
-            }
         }
     }
 

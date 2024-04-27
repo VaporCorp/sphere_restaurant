@@ -13,7 +13,7 @@
     <meta name="msapplication-TileColor" content="#BD9561" data-no-reload>
     <meta name="theme-color" content="#BD9561" data-no-reload>
     <title>MENTION LEGALES | Restaurant à Paris, sensation gastronomique dans le 8e</title>
-    <meta name="description"
+      <meta name="description"
           content="Le restaurant parisien SPHERE vous propose sa cuisine Gastronomique Française moderne et exigeante. Restaurant paris gastronomique.">
     <link rel="canonical" href="https://restaurantsphere.com/">
     <meta property="og:locale" content="fr_FR">
@@ -35,11 +35,11 @@
     <link rel="stylesheet" href="../assets/styles/reset.css">
     <link rel="stylesheet" href="../assets/styles/fonts.css">
     <link rel="stylesheet" href="../assets/styles/cursor.css">
-    <link rel="stylesheet" href="../assets/styles/header.css">
     <link rel="stylesheet" href="../assets/styles/burger-menu.css">
-    <link rel="stylesheet" href="../assets/styles/chief.css">
+    <link rel="stylesheet" href="../assets/styles/header.css">
+    <link rel="stylesheet" href="../assets/styles/mentions-legales.css">
     <link rel="stylesheet" href="../assets/styles/footer.css">
-    <link rel="stylesheet" href="../assets/styles/index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 <div class="header__div-bar" id="header__navbar">
@@ -105,7 +105,7 @@
 </main>
 <footer class="footer">
     <div class="footer__div-site-logo">
-        <a href="index.html" class="" rel="home" aria-current="page"
+        <a href="../index.html" class="" rel="home" aria-current="page"
            aria-label="Voir le site : Sphère">
             <picture class="">
                 <img src="../assets/images/logo-black-sphere.webp"
@@ -165,12 +165,12 @@
     <nav aria-label="Menu secondaire" class="site-info site-info--bottom">
         <ul class="footer-navigation-wrapper">
             <li>
-                <a href="./pages/mentions-legales.html">
+                <a href="mentions-legales.html">
                     <span>Mentions légales</span>
                 </a>
             </li>
             <li class="">
-                <a rel="privacy-policy" href="./pages/politique-de-confidentialite.html">
+                <a rel="privacy-policy" href="politique-de-confidentialite.html">
                     <span>Politique de confidentialité</span>
                 </a>
            
@@ -179,36 +179,49 @@
 </footer>
 <div id="burger-menu" class="menu">
     <nav aria-label="Menu principal">
-        <div>
+        <div class="menu-address">
             <ul>
                 <li>
-                    <a href="./pages/menu.html">La Carte</a>
+                    <a href="menu.html">La Carte</a>
                 </li>
                 <li>
-                    <a href="./restaurant-gastronomique.html">Le Restaurant</a>
+                    <a href="restaurant-gastronomique.html">Le Restaurant</a>
                 </li>
                 <li>
                     <a target="_blank" rel="noopener" href="https://bookings.zenchef.com/shop?rid=358497">Offrez le
                         Sphère</a>
                 </li>
                 <li>
-                    <a href="./contact.html">Contact</a>
+                    <a href="./presse.html">La presse</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
                 </li>
             </ul>
-            <div>
+            <ul class="secondary-menu">
+                <li>
+                    <a href="blog.html">Le Blog</a>
+                </li>
+                <li>
+                    <a href="restaurant-gastronomique.html">Restaurant Gastronomique Paris</a>
+                </li>
+            </ul>
+            <div class="address">
                 <address>
                     <p>
                         18, rue la Boetie, 75008 Paris.
-                        Tel : 01 44 90 02 95
-                        <br>
-                        Ouvert du Mardi au Dimanche : 12:00-14:30 et 19:00-22h:30 (Fermé de lundi)<br>Service Voiturier
-                        disponible en soirée le Vendredi, Samedi et Dimanche (Coût 20€)
+                        Tel : <a class="section-presentation__links" href="tel:0144900295"
+                                 title="Appelez-nous">01 44 90 02 95</a>
+                        <span class="address-infos">
+                            <span>Ouvert du Mardi au Dimanche : 12:00-14:30 et 19:00-22h:30 (Fermé de lundi)</span>
+                            <small>Service Voiturier
+                        disponible en soirée le Vendredi, Samedi et Dimanche (Coût 20€)</small>
+                        </span>
                     </p>
                 </address>
             </div>
         </div>
     </nav>
-
     <div class="marquee">
         <a class="marquee__cta" href="https://bookings.zenchef.com/results?rid=358497" title="Réservation">
             <div class="marquee__inner">
@@ -228,6 +241,10 @@
         <div class="cursor__side cursor__side--right"></div>
     </div>
 </div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <script src="../script.js"></script>
 </body>
 </html>

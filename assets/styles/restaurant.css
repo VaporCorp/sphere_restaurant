@@ -414,14 +414,6 @@ img {
         }
     }
 
-    .footer {
-        & .site-info--top, & .site-info--bottom {
-            & .footer-navigation-wrapper {
-                flex-direction: column;
-            }
-        }
-    }
-
     .menu.open {
         & div ul {
             text-align: center;

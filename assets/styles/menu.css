@@ -1,8 +1,29 @@
- .div-slide__title-menu {
-        font-size: 5rem;
-        mix-blend-mode: initial;
-        z-index: 2;
-        color: #BD9561;
-        text-transform: uppercase;
-        text-align: center;
+.div-slide__title-menu {
+    font-size: 5rem;
+    mix-blend-mode: initial;
+    z-index: 2;
+    color: #BD9561;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header-chief__div-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    max-width: 100%;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    figure {
+        height: 100%;
+        width: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
+}
