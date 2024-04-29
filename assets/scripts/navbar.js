@@ -1,0 +1,1 @@
+let header=document.getElementById("header__navbar"),scrollDistOpen=200;window.addEventListener("scroll",function(){window.scrollY>scrollDistOpen?header.classList.add("scrolled"):header.classList.remove("scrolled")});

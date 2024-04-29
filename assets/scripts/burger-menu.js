@@ -1,0 +1,1 @@
+const menuBtn=document.querySelector(".menu-btn"),navBar=document.querySelector(".header__div-bar"),menu=document.querySelector(".menu");menuBtn.addEventListener("click",()=>{navBar.classList.toggle("open"),menuBtn.classList.toggle("open"),menu.classList.toggle("open")});

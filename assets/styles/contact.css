@@ -62,7 +62,7 @@ img {
             position: relative;
 
             h1 {
-                font-family: Cormorant, sans-serif;
+                font-family: Saol-Display, sans-serif;
                 margin: 0 auto;
                 display: flex;
                 flex-direction: column;
@@ -72,7 +72,7 @@ img {
         }
 
         .div-left__div-content {
-            font-family: Futura-Std-Book, sans-serif;
+            font-family: Futura-Std, sans-serif;
             .div-left__h2 {
                 font-size: 1.5rem;
                 text-align: center;
@@ -114,7 +114,7 @@ img {
 
         .div-right__div-text {
             margin: 50px auto;
-            font-family: Futura-Std-Book, sans-serif;
+            font-family: Futura-Std, sans-serif;
 
             p {
                 line-height: 2;
@@ -160,7 +160,7 @@ img {
     margin: 50px auto;
     a {
         color: #725530;
-        font-family: Cormorant, serif;
+        font-family: Saol-Display, serif;
         font-size: 40px;
         text-decoration: none;
         padding: 10px 0;

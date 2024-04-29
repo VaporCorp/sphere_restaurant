@@ -17,7 +17,7 @@ img {
     }
 
     .section-legal-mentions__div-text {
-        font-family: Futura-Std-Book, sans-serif;
+        font-family: Futura-Std, sans-serif;
         .section-legal-mentions__title-h3 {
             font-size: 1.5rem;
             text-align: center;
@@ -63,7 +63,7 @@ img {
             left: 0;
             position: absolute;
             .div-text__p {
-                font-family: Futura-Std-Book, sans-serif;
+                font-family: Futura-Std, sans-serif;
                 word-wrap: break-word;
                 line-height: 2;
                 strong {
@@ -104,7 +104,7 @@ img {
 
 .section-h2 {
     color: var(--brown);
-    font-family: Cormorant, serif;
+    font-family: Saol-Display, serif;
     text-transform: uppercase;
     font-size: 80px;
     span {

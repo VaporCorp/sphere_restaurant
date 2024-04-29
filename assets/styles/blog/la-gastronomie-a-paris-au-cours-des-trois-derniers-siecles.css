@@ -22,7 +22,7 @@ img {
         margin: 0 auto;
     }
     p {
-        font-family: Futura-Std-Book, sans-serif;
+        font-family: Futura-Std, sans-serif;
         line-height: 2;
         margin: 30px auto;
     }
@@ -31,7 +31,7 @@ img {
     }
     h2 {
         margin: 1.25em auto 0.5em auto;
-        font-family: Cormorant, sans-serif;
+        font-family: Saol-Display, sans-serif;
         color: var(--brown);
         font-size: 3.125rem;
     }
@@ -45,12 +45,6 @@ img {
 }
 
 @media screen and (max-width: 992px) {
-    .header__div--logo {
-        img {
-            width: 50px !important;
-            height: auto;
-        }
-    }
     .header-blog {
         padding-top: 120px;
         padding-bottom: 45px;
