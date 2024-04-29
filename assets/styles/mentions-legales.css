@@ -7,58 +7,18 @@ img {
     width: 100%;
 }
 
-
-.header-chief {
-    position: relative;
-    min-height: 100svh;
-    display: flex;
-    margin-bottom: 0;
-    justify-content: flex-end;
-    padding-bottom: 10vh;
-    .div-slide__title-chief {
-        font-size: 5rem;
-        z-index: 2;
-        color: #BD9561;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .header-chief__div-slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        max-width: 100%;
-        overflow: hidden;
-        width: 100%;
-        margin: 0 auto;
-        height: 100%;
-        figure {
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100% !important;
-                height: 100% !important;
-                max-width: 100% !important;
-                object-fit: cover;
-                object-position: center center;
-            }
-        }
-    }
-}
-
-.main__section-chief {
+.main__section-legal-mentions {
     text-align: center;
     .section-h3:first-of-type{
         margin-top: 135px;
     }
-    .section-chief__div-title {
+    .section-legal-mentions__div-title {
         margin: 135px auto 70px auto;
     }
 
-    .section-chief__div-text {
+    .section-legal-mentions__div-text {
         font-family: Futura-Std-Book, sans-serif;
-        .section-chief__title-h3 {
+        .section-legal-mentions__title-h3 {
             font-size: 1.5rem;
             text-align: center;
             margin: 20px auto;
@@ -77,7 +37,7 @@ img {
         }
     }
 
-    .section-chief__div-desc {
+    .section-legal-mentions__div-desc {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -89,7 +49,7 @@ img {
             align-self: flex-end;
         }
 
-        .div-figure-chief {
+        .div-figure-legal-mentions {
             margin: -33.3333% 9vw 0 auto;
         }
 
@@ -117,12 +77,12 @@ img {
         width: 75%;
     }
 
-    .div-desc__div-figure.div-figure-chief {
+    .div-desc__div-figure.div-figure-legal-mentions {
         width: 33%;
     }
 
 
-    .section-chief__div-dishes {
+    .section-legal-mentions__div-dishes {
         display: flex;
         gap: 70px;
         margin: 135px 2rem;
@@ -159,8 +119,8 @@ img {
 }
 
 @media screen and (max-width: 992px) {
-    .header-chief {
-        .div-slide__title-chief {
+    .header-legal-mentions {
+        .div-slide__title-legal-mentions {
             font-size: 2.5rem;
         }
     }
@@ -242,8 +202,8 @@ img {
         }
     }
 
-    .main__section-chief {
-        .section-chief__div-dishes {
+    .main__section-legal-mentions {
+        .section-legal-mentions__div-dishes {
             display: none;
         }
     }

@@ -197,6 +197,9 @@
             }
         }
     }
+    .burger-menu__phone {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 576px) {
