@@ -40,18 +40,18 @@
     <link rel="stylesheet" href="assets/styles/burger-menu.css">
     <link rel="stylesheet" href="assets/styles/header.css">
     <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="stylesheet" href="assets/styles/globals.css">
     <link rel="stylesheet" href="assets/styles/footer.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         window.addEventListener('DOMContentLoaded', function() {
             // Fonction pour supprimer les divs sur la version mobile
             function removeDivsOnMobile() {
                 if (window.innerWidth <= 992) {
-                    let divsToRemove = document.querySelectorAll('.slides:not(:nth-of-type(3))');
+                    let divsToRemove = document.querySelectorAll('.slides:not(:nth-of-type(1))');
                     divsToRemove.forEach(function(div) {
                         div.parentNode.removeChild(div);
                     });
-                    let elementToRemoveClass = document.querySelector('.slide3');
+                    let elementToRemoveClass = document.querySelector('.slide1');
                     elementToRemoveClass.classList.remove('slides');
                 }
             }
@@ -64,19 +64,19 @@
 <body>
 <header class="header__div-bar" id="header__navbar">
     <nav class="header__nav--bookingandgift section-cta section-cta-others">
-        <a id="header__button--booking" class="header__button--booking" data-aos="fade-right" data-aos-duration="1000"
+        <a id="header__button--booking" class="header__button--booking"
            href="https://bookings.zenchef.com/results?rid=358497"
            title="Réservation" target="_blank" rel="noopener">
             <span class="button-label">Réservation</span>
         </a>
-        <a id="header__button--gift" class="header__button--gift" data-aos="fade-right" data-aos-duration="1000"
+        <a id="header__button--gift" class="header__button--gift"
            href="https://bookings.zenchef.com/shop?rid=358497"
            title="Bon cadeau"
            target="_blank" rel="noopener">
             <span class="button-label">Bon cadeau</span>
         </a>
     </nav>
-    <div class="header__div--logo" data-aos="fade-down" data-aos-duration="1000">
+    <div class="header__div--logo">
         <a href="./index.html" class="custom-logo-link" rel="home" aria-current="page">
             <img src="./assets/images/logo-sphere-blanc-web.svg"
                  width="156"
@@ -92,7 +92,7 @@
 </header>
 <header class="header" id="header">
     <div class="header__div--fame-logos">
-        <figure class="fame-logos fame-logos__best-2022" data-aos="fade-in" data-aos-duration="2000">
+        <figure class="fame-logos fame-logos__best-2022">
             <img src="./assets/images/elu-meilleur-restaurant-paris-2022.webp"
                  width="100"
                  height="100"
@@ -100,7 +100,7 @@
                  decoding="async"
                  title="Sphère, le restaurant Paris gastronomique">
         </figure>
-        <div class="fame-logos fame-logos__chief" data-aos="fade-in" data-aos-duration="2000">
+        <div class="fame-logos fame-logos__chief">
             <p>CHEF TETSUYA YOSHIDA</p>
             <figure class="chief__stars">
                 <img src="./assets/images/3-etoiles.png"
@@ -112,16 +112,16 @@
             </figure>
         </div>
         <a href="https://www.thefork.fr/restaurant/sphere-r733306"
-           target="_blank" rel="noopener" class="fame-logos fame-logos__the-fork" data-aos="fade-in" data-aos-duration="2000">
-            <img src="./assets/images/logo-the-fork.svg"
+           target="_blank" rel="noopener" class="fame-logos fame-logos__the-fork">
+            <img src="./assets/images/logo_the_fork.png"
                  width="30"
                  height="30"
-                 alt="Logo The Fork" data-aos="zoom-in" data-aos-duration="2000">
+                 alt="Logo The Fork">
             9.9
         </a>
         <a href="https://www.google.com/search?q=restaurant+sphere+paris&oq=restaurant+sphere&aqs=chrome.0.0i355i512j46i175i199i512j69i57j46i175i199i512j0i512j69i60l3.2311j0j4&sourceid=chrome&ie=UTF-8#lrd=0x47e66f4c47058947:0xe1de61d4b89d1efb,1,,,,"
-           target="_blank" rel="noopener" class="fame-logos fame-logos__google" data-aos="fade-in" data-aos-duration="2000">
-            <img src="./assets/images/logo-google.svg"
+           target="_blank" rel="noopener" class="fame-logos fame-logos__google">
+            <img src="./assets/images/logo_google.png"
                  width="30"
                  height="30"
                  alt="Logo Google">
@@ -143,7 +143,7 @@
                              title="Sphère, le restaurant Paris gastronomique">
                     </picture>
                 </figure>
-                <h3 class="div-slide__title h3" data-aos="zoom-in" data-aos-duration="2000">
+                <h3 class="div-slide__title h3">
                     L'expérience Restaurant Gastronomique du Paris 8ème</h3>
             </div>
             <div class="div-wrapper__div-slide slide2 slides">
@@ -158,11 +158,11 @@
                              title="Sphère, le restaurant Paris gastronomique">
                     </picture>
                 </figure>
-                <h3 class="div-slide__title h3" data-aos="zoom-in" data-aos-duration="2000">
+                <h3 class="div-slide__title h3">
                     Gourmet, Créatif, Esthétique</h3>
             </div>
             <div class="div-wrapper__div-slide slide3 slides">
-                <figure class="div-slide__figure" data-aos="fade-in" data-aos-duration="2000">
+                <figure class="div-slide__figure">
                     <picture>
                         <source media="(max-width: 992px)" srcset="./assets/images/restaurant-sphere-paris-slider-salle-2-mobile.webp">
                         <img src="./assets/images/restaurant-sphere-paris-slider-salle-2.webp"
@@ -172,7 +172,7 @@
                              title="Sphère, le restaurant Paris gastronomique">
                     </picture>
                 </figure>
-                <h3 class="div-slide__title h3" data-aos="zoom-in" data-aos-duration="2000">Parmi
+                <h3 class="div-slide__title h3">Parmi
                     les meilleurs restaurants Chics et Gastro de
                     Paris</h3>
             </div>
@@ -185,7 +185,7 @@
                          loading="lazy"
                          title="Sphère, le restaurant Paris gastronomique">
                 </figure>
-                <h3 class="div-slide__title h3" data-aos="zoom-in" data-aos-duration="2000">Un
+                <h3 class="div-slide__title h3">Un
                     voyage culinaire tendance et incontournable</h3>
             </div>
             <div class="div-wrapper__div-slide slide5 slides">
@@ -207,13 +207,12 @@
     <section class="main__section-presentation">
         <div class="section-presentation__div-left">
             <div class="div-left__title">
-                <h1><span class="title__span title__span-brown" data-aos="fade-up-right"
-                          data-aos-duration="1500"> <span>DÉCOUVREZ</span> UNE </span>
-                    <span class="title__span title__span-gold" data-aos="fade-up-right" data-aos-duration="1500"> NOUVELLE ÉTOILE </span>
-                    <span class="title__span title__span-brown" data-aos="fade-up-right" data-aos-duration="1500"> DANS LA </span>
-                    <span class="title__span title__span-gold" data-aos="fade-up-right" data-aos-duration="1500"> GASTRONOMIE </span>
-                    <span class="title__span title__span-brown" data-aos="fade-up-right" data-aos-duration="1500"> PARISIENNE </span>
-
+                <h1 class="page__title">
+                    <span class="title__span title__span-brown">DÉCOUVREZ UNE</span>
+                    <span class="title__span title__span-gold">NOUVELLE ÉTOILE</span>
+                    <span class="title__span title__span-brown">DANS LA</span>
+                    <span class="title__span title__span-gold">GASTRONOMIE</span>
+                    <span class="title__span title__span-brown">PARISIENNE</span>
                 </h1>
             </div>
             <div class="div-left__div-content div-left__div-logos">
@@ -245,7 +244,7 @@
                 </figure>
             </div>
             <div class="div-left__div-content">
-                <h2 class="div-left__h2" data-aos="fade-in" data-aos-duration="2000"> Bienvenue chez Sphère,
+                <h2 class="div-left__h2"> Bienvenue chez Sphère,
                     <span>un <strong class="section-presentation__strong">Joyau Gastronomique</strong> au Cœur de Paris
                             </span>
                     <span>
@@ -293,7 +292,7 @@
                     <span class="button-label">D&eacute;couvrir la Presse</span>
                 </a>
             </div>
-            <figure class="div-content__video" data-aos="fade-right" data-aos-duration="2000">
+            <figure class="div-content__video">
                 <video controls
                        poster="./assets/images/SPHERE-30SEC-16-9-V2-720-web.webp"
                        src="assets/images/SPHERE-30SEC-16-9-V2-720-web.mp4"
@@ -305,7 +304,7 @@
             <figure class="div-right__figure">
                 <img decoding="async"
                      src="./assets/images/sphere-restaurant-salle-DSC2777-1200x1800.webp"
-                     data-aos="fade-left" data-aos-duration="2000" data-aos-delay="200"
+
                      loading="lazy"
                      alt="La salle &eacute;l&eacute;gante et chic du restaurant Gastronomique Sph&egrave;re &agrave; Paris"
                      title="La salle &eacute;l&eacute;gante et chic du restaurant Gastronomique Sph&egrave;re &agrave; Paris">
@@ -348,16 +347,14 @@
     <section class="main__section-menu">
         <div class="section-menu__div">
             <div class="section-menu__div-big-title">
-                <h2 class="section-menu__title section-menu__title-h2 section-h2" data-aos="zoom-in"
-                    data-aos-duration="2000">La Carte</h2>
+                <h2 class="section-menu__title section-menu__title-h2 section-h2">La Carte</h2>
             </div>
             <p class="section-menu__text">
                 Au restaurant Sph&egrave;re, nous vous invitons &agrave; explorer notre Menu Carte Blanche, servi pour
                 l’ensemble de la table, qui offre plusieurs opportunit&eacute;s selon vos go&ucirc;ts et votre app&eacute;tit
                 :
             </p>
-            <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in"
-                data-aos-duration="2000">MENU CARTE BLANCHE</h3>
+            <h3 class="section-menu__title section-menu__title-h3 section-h3">MENU CARTE BLANCHE</h3>
             <div class="section-menu__div-part">
                 <article class="section-menu__article-menu">
                     <p class="article-menu__p-item">
@@ -826,9 +823,9 @@
     </nav>
 </footer>
 <div id="burger-menu" class="menu">
-    <nav aria-label="Menu principal">
-        <div class="menu-address">
-            <ul>
+    <nav aria-label="Menu principal" class="primary-navigation">
+        <div class="menu-address primary-menu-container">
+            <ul class="primary-menu-list menu-wrapper">
                 <li>
                     <a href="./pages/menu.html">La Carte</a>
                 </li>
@@ -840,7 +837,7 @@
                         Sphère</a>
                 </li>
                 <li>
-                    <a target="_blank" rel="noopener" href="./pages/presse.html">La presse</a>
+                    <a target="_blank" rel="noopener" href="./pages/presse.html">La Presse</a>
                 </li>
                 <li>
                     <a href="./pages/contact.html">Contact</a>
@@ -889,11 +886,16 @@
         <div class="cursor__side cursor__side--right"></div>
     </div>
 </div>
+<div class="loader">
+    <img src="./assets/images/logo-sphere-blanc-web.svg"
+         width="156"
+         height="130"
+         class="custom-logo" alt="SPHERE | Restaurant à Paris, sensation gastronomique dans le 8e"
+         fetchpriority="high" title="logo-blanc-sphere">
+</div>
 </body>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({once: false});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="./assets/scripts/burger-menu.js"></script>
 <script src="./assets/scripts/navbar.js"></script>
 <script src="./assets/scripts/image-horizontal-parallax.js"></script>
