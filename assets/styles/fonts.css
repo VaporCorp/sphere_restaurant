@@ -1,18 +1,1 @@
-@font-face {
-    font-display: swap;
-    font-family: Futura-Std;
-    src: url(../fonts/Futura-Std-Medium.woff);
-}
-
-@font-face {
-    font-display: swap;
-    font-family: Futura-Std-Book;
-    src: url(../fonts/Futura-Std-Book.woff);
-}
-
-
-@font-face {
-    font-display: swap;
-    font-family: Saol-Display;
-    src: url(../fonts/SaolDisplay-Regular.woff);
-}
+@font-face {    font-display: swap;    font-family: Futura-Std;    src: url(../fonts/Futura-Std-Medium.woff);}@font-face {    font-display: swap;    font-family: Futura-Std-Book;    src: url(../fonts/Futura-Std-Book.woff);}@font-face {    font-display: swap;    font-family: Saol-Display;    src: url(../fonts/SaolDisplay-Regular.woff);}

@@ -194,6 +194,7 @@
 
 @media screen and (max-width: 992px){
     .menu.open {
+        padding: 10vh 10vw;
         div ul.secondary-menu {
             text-align: left;
             position: relative;
@@ -201,8 +202,14 @@
             left: unset;
             align-items: flex-end;
         }
+        div ul:not(.secondary-menu) {
+            li {
+                a {
+                    font-size: 1.75rem;
+                }
+            }
+        }
         .address {
-            width: 80%;
             span, small {
             display: inline-block;
             }
@@ -215,13 +222,6 @@
 
 @media screen and (max-width: 768px) {
     .menu.open {
-        div ul:not(.secondary-menu) {
-            li {
-                a {
-                    font-size: 1.75rem;
-                }
-            }
-        }
         address {
             .address-infos {
                 display: none;
@@ -235,6 +235,20 @@
 
 @media screen and (max-width: 576px) {
     .menu.open {
+        .primary-navigation {
+            width: 100%;
+        }
+
+        .address {
+            width: 100%;
+            .address-infos {
+                white-space: normal;
+            }
+        }
+
+        div ul.secondary-menu {
+            margin-top: 65px;
+        }
         & div ul {
             text-align: center;
             & li a {

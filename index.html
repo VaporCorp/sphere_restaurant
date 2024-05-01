@@ -41,17 +41,22 @@
     <link rel="stylesheet" href="assets/styles/header.css">
     <link rel="stylesheet" href="assets/styles/index.css">
     <link rel="stylesheet" href="assets/styles/globals.css">
-    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/footer.css"><!--
+    <link rel="preload" href="./assets/scripts/GSAP.js" as="script">
+    <link rel="preload" href="./assets/scripts/cursor.js" as="script">
+    <link rel="preload" href="./assets/scripts/navbar.js" as="script">
+    <link rel="preload" href="./assets/scripts/burger-menu.js" as="script">
+    <link rel="preload" href="./assets/scripts/image-horizontal-parallax.js" as="script">-->
     <script>
         window.addEventListener('DOMContentLoaded', function() {
             // Fonction pour supprimer les divs sur la version mobile
             function removeDivsOnMobile() {
                 if (window.innerWidth <= 992) {
-                    let divsToRemove = document.querySelectorAll('.slides:not(:nth-of-type(1))');
+                    let divsToRemove = document.querySelectorAll('.slides:not(:nth-of-type(5))');
                     divsToRemove.forEach(function(div) {
                         div.parentNode.removeChild(div);
                     });
-                    let elementToRemoveClass = document.querySelector('.slide1');
+                    let elementToRemoveClass = document.querySelector('.slide5');
                     elementToRemoveClass.classList.remove('slides');
                 }
             }
@@ -116,6 +121,7 @@
             <img src="./assets/images/logo_the_fork.png"
                  width="30"
                  height="30"
+                 decoding="async"
                  alt="Logo The Fork">
             9.9
         </a>
@@ -134,8 +140,8 @@
                 <figure class="div-slide__figure">
                     <picture>
                         <source media="(max-width: 992px)" srcset="./assets/images/restaurant-sphere-paris-8-ambiance-3-mobile.webp">
-                        <img src="./assets/images/restaurant-sphere-paris-8-ambiance-3.webp"
-                             class="figure__img"
+                        <img id="imageContainer" data-src="./assets/images/restaurant-sphere-paris-8-ambiance-3.webp"
+                             class="figure__img id="imageContainer""
                              alt="restaurant sphere paris 8 ambiance 3 - Sphère, le restaurant Paris gastronomique"
                              fetchpriority="high"
                              decoding="async"
@@ -150,8 +156,8 @@
                 <figure class="div-slide__figure">
                     <picture>
                         <source media="(max-width: 992px)" srcset="./assets/images/restaurant-paris-sphere-plat-DSC6583-mobile.webp">
-                        <img src="./assets/images/restaurant-paris-sphere-plat-DSC6583.webp"
-                             class="figure__img"
+                        <img id="imageContainer" data-src="./assets/images/restaurant-paris-sphere-plat-DSC6583.webp"
+                             class="figure__img id="imageContainer""
                              alt="restaurant paris sphere plat DSC6583 - Sphère, le restaurant Paris gastronomique"
                              decoding="async"
                              loading="lazy"
@@ -165,8 +171,8 @@
                 <figure class="div-slide__figure">
                     <picture>
                         <source media="(max-width: 992px)" srcset="./assets/images/restaurant-sphere-paris-slider-salle-2-mobile.webp">
-                        <img src="./assets/images/restaurant-sphere-paris-slider-salle-2.webp"
-                             class="figure__img"
+                        <img id="imageContainer" data-src="./assets/images/restaurant-sphere-paris-slider-salle-2.webp"
+                             class="figure__img id="imageContainer""
                              alt="restaurant sphere paris slider salle 2 - Sphère, le restaurant Paris gastronomique"
                              decoding="async" loading="lazy"
                              title="Sphère, le restaurant Paris gastronomique">
@@ -178,8 +184,8 @@
             </div>
             <div class="div-wrapper__div-slide slide4 slides">
                 <figure class="div-slide__figure">
-                    <img src="./assets/images/sphere-restaurant-paris-plat-DSC0489.webp"
-                         class="figure__img"
+                    <img id="imageContainer" data-src="./assets/images/sphere-restaurant-paris-plat-DSC0489.webp"
+                         class="figure__img id="imageContainer""
                          alt="sphere restaurant paris plat DSC0489 - Sphère, le restaurant Paris gastronomique"
                          decoding="async"
                          loading="lazy"
@@ -190,14 +196,14 @@
             </div>
             <div class="div-wrapper__div-slide slide5 slides">
                 <figure class="div-slide__figure">
-                    <img src="./assets/images/sphere-restaurant-paris-chef-DSC0523.webp"
-                         class="figure__img"
+                    <img id="imageContainer" data-src="./assets/images/sphere-restaurant-paris-chef-DSC0523.webp"
+                         class="figure__img id="imageContainer""
                          alt="sphere restaurant paris chef DSC0523 - Sphère, le restaurant Paris gastronomique"
                          decoding="async"
                          loading="lazy"
                          title="Sphère, le restaurant Paris gastronomique">
                 </figure>
-                <h3 class="div-slide__title h3" data-aos="zoom-in" data-aos-duration="2000">
+                <h3 class="div-slide__title h3">
                     L'expérience d'un chef de restaurants étoilés Michelin</h3>
             </div>
         </div>
@@ -217,9 +223,10 @@
             </div>
             <div class="div-left__div-content div-left__div-logos">
                 <figure class="div-content__figure">
-                    <img src="./assets/images/logo-paris-capitale.webp"
+                    <img id="imageContainer" data-src="./assets/images/logo-paris-capitale.webp"
                          alt="logo paris capitale site@2x - Sph&egrave;re, le restaurant Paris gastronomique"
                          title="Sph&egrave;re, le restaurant Paris gastronomique"
+                         class="logo-paris-capitale"
                          decoding="async"
                          loading="lazy">
                 </figure>
@@ -227,30 +234,25 @@
                     <a href="https://www.lefigaro.fr/gastronomie/sphere-des-plats-raffines-qui-ont-de-la-vitalite-20221209"
                        target="_blank" rel="noreferrer noopener"
                        title="Le Figaro : Sph&egrave;re, des plats raffin&eacute;s qui ont de la vitalit&eacute;">
-                        <img decoding="async" width="337" height="45"
-                             src="./assets/images/logo-Le_Figaro.png"
+                        <img id="imageContainer" decoding="async" width="337" height="45"
+                             data-src="./assets/images/logo-Le_Figaro.png"
                              alt="Le Figaro : Sph&egrave;re, des plats raffin&eacute;s qui ont de la vitalit&eacute;"
-                             class="wp-image-3490"
+                             class="logo-figaro"
                              loading="lazy"
                              title="Le Figaro : Sph&egrave;re, des plats raffin&eacute;s qui ont de la vitalit&eacute;">
                     </a>
                 </figure>
                 <figure class="div-content__figure">
-                    <img decoding="async"
-                         src="./assets/images/logo-le-point.webp"
+                    <img id="imageContainer" decoding="async"
+                         data-src="./assets/images/logo-le-point.webp"
+                         class="logo-le-point"
                          alt="logo le point@2x - Sph&egrave;re, le restaurant Paris gastronomique"
                          loading="lazy"
                          title="Sph&egrave;re, le restaurant Paris gastronomique">
                 </figure>
             </div>
             <div class="div-left__div-content">
-                <h2 class="div-left__h2"> Bienvenue chez Sphère,
-                    <span>un <strong class="section-presentation__strong">Joyau Gastronomique</strong> au Cœur de Paris
-                            </span>
-                    <span>
-                            qui vous plonge dans une ambiance unique.
-                            </span>
-                </h2>
+                <h2 class="div-left__h2 h3-animated-by-word"> Bienvenue chez Sphère, un <span class="section-presentation__strong">Joyau Gastronomique</span> au Cœur de Paris <span>qui vous plonge dans une ambiance unique.</span></h2>
             </div>
             <p class="div-left__div-content div-left__p">Situ&eacute; dans le prestigieux quartier de Miromesnil,
                 dans le <strong class="section-presentation__strong">8&egrave;me arrondissement de Paris</strong>,
@@ -271,7 +273,7 @@
                 &eacute;t&eacute; soigneusement
                 pens&eacute; pour &eacute;veiller vos sens et enrichir votre exp&eacute;rience gastronomique.
             </p>
-            <div class="div-left__div-content div-left__div-cta section-cta">
+            <div class="div-left__div-content div-left__div-cta section-cta section-cta-animated">
                 <a class="" href="pages/presse.html"
                    title="D&eacute;couvrir la Presse">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28.376 26.957" width="28"
@@ -295,6 +297,7 @@
             <figure class="div-content__video">
                 <video controls
                        poster="./assets/images/SPHERE-30SEC-16-9-V2-720-web.webp"
+                       preload="auto"
                        src="assets/images/SPHERE-30SEC-16-9-V2-720-web.mp4"
                        playsinline>
                 </video>
@@ -302,8 +305,8 @@
         </div>
         <div class="section-presentation__div-right">
             <figure class="div-right__figure">
-                <img decoding="async"
-                     src="./assets/images/sphere-restaurant-salle-DSC2777-1200x1800.webp"
+                <img id="imageContainer" decoding="async"
+                     data-src="./assets/images/sphere-restaurant-salle-DSC2777-1200x1800.webp"
 
                      loading="lazy"
                      alt="La salle &eacute;l&eacute;gante et chic du restaurant Gastronomique Sph&egrave;re &agrave; Paris"
@@ -321,7 +324,7 @@
                     <small>Service Voiturier disponible en soir&eacute;e le Vendredi, Samedi et Dimanche</small>
                 </p>
             </div>
-            <div class="div-right__div-cta section-cta">
+            <div class="div-right__div-cta section-cta section-cta-animated">
                 <a class=""
                    href="https://bookings.zenchef.com/results?rid=358497" title="R&eacute;servation">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28.376 26.957" width="28"
@@ -347,14 +350,14 @@
     <section class="main__section-menu">
         <div class="section-menu__div">
             <div class="section-menu__div-big-title">
-                <h2 class="section-menu__title section-menu__title-h2 section-h2">La Carte</h2>
+                <h2 id="1" class="section-menu__title section-menu__title-h2 section-h2 text-animated-by-word">La Carte</h2>
             </div>
             <p class="section-menu__text">
                 Au restaurant Sph&egrave;re, nous vous invitons &agrave; explorer notre Menu Carte Blanche, servi pour
                 l’ensemble de la table, qui offre plusieurs opportunit&eacute;s selon vos go&ucirc;ts et votre app&eacute;tit
                 :
             </p>
-            <h3 class="section-menu__title section-menu__title-h3 section-h3">MENU CARTE BLANCHE</h3>
+            <h3 class="section-menu__title section-menu__title-h3 section-h3 h3-animated-by-word">MENU CARTE BLANCHE</h3>
             <div class="section-menu__div-part">
                 <article class="section-menu__article-menu">
                     <p class="article-menu__p-item">
@@ -385,7 +388,7 @@
                 Chaque option vous fera traverser un voyage gustatif &agrave; travers des amuse-bouche inoubliables, des
                 entr&eacute;es subtiles, des plats principaux cr&eacute;atifs et des desserts innovants.
             </p>
-            <div class="section-menu__div-cta section-menu__cta-booking section-cta">
+            <div class="section-menu__div-cta section-menu__cta-booking section-cta section-cta-animated">
                 <a class=""
                    href="https://bookings.zenchef.com/results?rid=358497" title="R&eacute;servation">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28.376 26.957" width="28"
@@ -409,8 +412,7 @@
             <p class="section-menu__text">
                 Extraits de la carte gastronomique du restaurant Sph&egrave;re &agrave; Paris
             </p>
-            <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in"
-                data-aos-duration="2000">ENTR&Eacute;ES</h3>
+            <h3 class="section-menu__title section-menu__title-h3 section-h3 h3-animated-by-word">ENTR&Eacute;ES</h3>
             <div class="section-menu__div-part">
                 <article class="section-menu__article-menu">
                     <p class="article-menu__p-item">
@@ -437,8 +439,7 @@
                         Porto rouge au cumin</p>
                 </article>
             </div>
-            <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in"
-                data-aos-duration="2000">PLATS</h3>
+            <h3 class="section-menu__title section-menu__title-h3 section-h3 h3-animated-by-word">PLATS</h3>
             <div class="section-menu__div-part">
                 <article class="section-menu__article-menu">
                     <p class="article-menu__p-item">
@@ -466,8 +467,7 @@
                         Bouddha</p>
                 </article>
             </div>
-            <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in"
-                data-aos-duration="2000">DESSERTS</h3>
+            <h3 class="section-menu__title section-menu__title-h3 section-h3 h3-animated-by-word">DESSERTS</h3>
             <div class="section-menu__div-part">
                 <article class="section-menu__article-menu">
                     <p class="article-menu__p-item">
@@ -491,7 +491,7 @@
                     </p>
                 </article>
             </div>
-            <div class="section-menu__div-cta section-menu__cta-carte section-cta">
+            <div class="section-menu__div-cta section-menu__cta-carte section-cta section-cta-animated">
                 <!--cedric url menu--> <a class="" href="pages/menu.html"
                                           title="Voir la Carte">
                 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28.376 26.957" width="28"
@@ -515,9 +515,9 @@
         </div>
     </section>
     <div class="section-menu__div-figure">
-        <figure class="div-figure__content" data-aos="fade-left" data-aos-duration="2000">
-            <img decoding="async"
-                 src="./assets/images/sphere-restaurant-plat-DSC0597-1600x1149.webp"
+        <figure class="div-figure__content">
+            <img id="imageContainer" decoding="async"
+                 data-src="./assets/images/sphere-restaurant-plat-DSC0597-1600x1149.webp"
                  alt="Des plats de cuisine Fran&ccedil;aise de haute voltige"
                  loading="lazy"
                  title="Des plats de cuisine Fran&ccedil;aise de haute voltige">
@@ -525,15 +525,12 @@
     </div>
     <section class="main__section-chief">
         <div class="section-chief__div-title">
-            <h2 class="section-chief__title section-chief__title-h2 section-h2" data-aos="zoom-in"
-                data-aos-duration="2000">Le Chef <span
+            <h2 id="2" class="section-chief__title section-chief__title-h2 section-h2 text-animated-by-word">Le Chef <span
                     class="title-h2__span">Tetsuya Yoshida</span>
             </h2>
         </div>
         <div class="section-chief__div-text">
-            <h3 class="section-chief__title section-chief__title-h3 section-h3" data-aos="zoom-in"
-                data-aos-duration="2000" data-aos-delay="500">Un <span>Virtuose</span> de la
-                Gastronomie</h3>
+            <h3 class="section-chief__title section-chief__title-h3 section-h3 h3-animated-by-word">Un <span>Virtuose</span> de la Gastronomie</h3>
             <p class="div-text__p">À la tête des cuisines du restaurant Sphère, le chef Tetsuya Yoshida,
                 natif de Nagasaki et formé dans les cuisines les plus exigeantes de France et du Japon,
                 apporte à Sphère une maîtrise parfaite des techniques culinaires innovantes et un flair artistique
@@ -545,7 +542,7 @@
                 créer des plats qui ne sont pas seulement délicieux, mais aussi visuellement époustouflants.
             </p>
         </div>
-        <div class="section-chief__div-cta section-cta">
+        <div class="section-chief__div-cta section-cta section-cta-animated">
             <a class="" href="./pages/tetsuda-yoshida.html"
                title="Voir la Carte">
                 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28.376 26.957" width="28"
@@ -563,24 +560,24 @@
                         </g>
                     </g>
                 </svg>
-                <span class="button-label">Découvrir le parcours du Chef </span>
+                <span class="button-label">Le parcours du Chef </span>
             </a>
         </div>
         <div class="section-chief__div-desc">
             <div class="div-desc__div-figure div-figure-chief">
-                <figure data-aos="fade-up" data-aos-duration="2000">
-                    <img decoding="async"
+                <figure>
+                    <img id="imageContainer" decoding="async"
                          loading="lazy"
-                         src="./assets/images/restaurant-paris-sphere-chef-DSC6652-800x1200.webp"
+                         data-src="./assets/images/restaurant-paris-sphere-chef-DSC6652-800x1200.webp"
                          alt="restaurant paris sphere chef DSC6652 800x1200 - Sph&egrave;re, le restaurant Paris gastronomique"
                          title="restaurant paris sphere chef DSC6652 800x1200 - Sph&egrave;re, le restaurant Paris gastronomique">
                 </figure>
             </div>
             <div class="div-desc__div-figure div-figure-dish">
-                <figure data-aos="fade-left" data-aos-duration="2000">
-                    <img decoding="async"
+                <figure>
+                    <img id="imageContainer" decoding="async"
                          loading="lazy"
-                         src="./assets/images/sphere-restaurant-paris-salle-DSC0412-1600x1066.webp"
+                         data-src="./assets/images/sphere-restaurant-paris-salle-DSC0412-1600x1066.webp"
                          alt="sphere restaurant paris salle DSC0412 1600x1066 - Sph&egrave;re, le restaurant Paris gastronomique"
                          title="sphere restaurant paris salle DSC0412 1600x1066 - Sph&egrave;re, le restaurant Paris gastronomique">
                 </figure>
@@ -600,31 +597,31 @@
             </div>
         </div>
         <div class="section-chief__div-dishes">
-            <figure class="div-dishes__figure">
-                <img decoding="async"
+            <figure class="div-dishes__figure div-dishes__figure-1">
+                <img id="imageContainer" decoding="async"
                      loading="lazy"
-                     src="./assets/images/sphere-restaurant-paris-plat-DSC0555-800x800.webp"
+                     data-src="./assets/images/sphere-restaurant-paris-plat-DSC0555-800x800.webp"
                      alt="Press&eacute;e de Poulpe, raffinement et saveurs"
                      title="Press&eacute;e de Poulpe, raffinement et saveurs">
             </figure>
-            <figure class="div-dishes__figure">
-                <img decoding="async"
+            <figure class="div-dishes__figure div-dishes__figure-2">
+                <img id="imageContainer" decoding="async"
                      loading="lazy"
-                     src="./assets/images/restaurant-paris-sphere-plat-DSC6568-800x800.webp"
+                     data-src="./assets/images/restaurant-paris-sphere-plat-DSC6568-800x800.webp"
                      alt="Le homard, c'est so chic !"
                      title="Le homard, c'est so chic !">
             </figure>
-            <figure class="div-dishes__figure">
-                <img decoding="async"
+            <figure class="div-dishes__figure div-dishes__figure-3">
+                <img id="imageContainer" decoding="async"
                      loading="lazy"
-                     src="./assets/images/restaurant-paris-sphere-plat-DSC6519-800x800.webp"
+                     data-src="./assets/images/restaurant-paris-sphere-plat-DSC6519-800x800.webp"
                      alt="Les amuses bouches du Sph&egrave;re sont toujours cr&eacute;atifs"
                      title="Les amuses bouches du Sph&egrave;re sont toujours cr&eacute;atifs">
             </figure>
-            <figure class="div-dishes__figure">
-                <img decoding="async"
+            <figure class="div-dishes__figure div-dishes__figure-4">
+                <img id="imageContainer" decoding="async"
                      loading="lazy"
-                     src="./assets/images/restaurant-paris-sphere-plat-DSC6600-800x800.webp"
+                     data-src="./assets/images/restaurant-paris-sphere-plat-DSC6600-800x800.webp"
                      alt="La gastronomie Fran&ccedil;aise avec des produits d'exception"
                      title="La gastronomie Fran&ccedil;aise avec des produits d'exception">
             </figure>
@@ -632,7 +629,7 @@
     </section>
     <section class="main__section-restaurant">
         <div class="section-restaurant__div">
-            <h2 class="section-h2" data-aos="zoom-in" data-aos-duration="2000">LE RESTAURANT</h2>
+            <h2 id="3" class="section-h2 text-animated-by-word">LE RESTAURANT</h2>
             <p class="div-restaurant__p">Le restaurant gastronomique SPHERE vous plonge dans une
                 ambiance
                 unique empreinte de luxe et sophistication &agrave; Paris intra muros. </p>
@@ -645,7 +642,7 @@
                 &Agrave; la nuit tomb&eacute;e, il plonge ses visiteurs dans une ambiance feutr&eacute;e
                 pour d&icirc;ner entre intimes ou un moment romantique en couple.
             </p>
-            <div class="div-restaurant__div-cta section-cta">
+            <div class="div-restaurant__div-cta section-cta section-cta-animated">
                 <a href="./pages/restaurant-gastronomique.html"
                    title="D&eacute;couvrir le Restaurant">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28.376 26.957" width="28"
@@ -669,15 +666,15 @@
         </div>
         <div class="section-restaurant__div-image">
             <figure>
-                <img decoding="async"
+                <img id="imageContainer" decoding="async"
                      loading="lazy"
-                     src="./assets/images/restaurant-sphere-paris-slider-salle-3.webp"
+                     data-src="./assets/images/restaurant-sphere-paris-slider-salle-3.webp"
                      alt="restaurant sphere paris slider salle 3 - Sph&egrave;re, le restaurant Paris gastronomique"
                      title="restaurant sphere paris slider salle 3 - Sph&egrave;re, le restaurant Paris gastronomique">
             </figure>
             <div class="div-image__div-text">
                 <p>Chaque espace du restaurant a son style et sa signature :
-                    <span>L&rsquo;ilot central avec ses banquettes sur mesure et son&eacute;clairage surprenant&hellip;</span>
+                    <span>L&rsquo;ilot central avec ses banquettes sur mesure et son &eacute;clairage surprenant&hellip;</span>
                     <span>ou le salon &agrave; l&rsquo;entr&eacute;e avec son escalier sans issue &eacute;nigmatique,</span>
                     <span>ou encore le superbe bar &eacute;meraude illumin&eacute; par des sph&egrave;re brillantes.</span>
                 </p>
@@ -686,44 +683,42 @@
         <div class="section-double-images">
             <div class="double-images__gauche">
                 <figure class="div-image__gauche">
-                    <img decoding="async"
+                    <img id="imageContainer" decoding="async"
                          loading="lazy"
-                         src="./assets/images/sphere-restaurant-paris-cafe-dessert-DSC0656-800x800.jpg"
+                         data-src="./assets/images/sphere-restaurant-paris-cafe-dessert-DSC0656-800x800.jpg"
                          alt="sphere restaurant paris cafe dessert DSC0656 800x800 - Sphère, le restaurant Paris gastronomique"
                          title="sphere restaurant paris cafe dessert DSC0656 800x800 - Sphère, le restaurant Paris gastronomique">
                 </figure>
             </div>
             <div class="double-images__droite">
                 <figure class="div-image__droite">
-                    <img decoding="async"
+                    <img id="imageContainer" decoding="async"
                          loading="lazy"
                          width="800"
                          height="1200"
-                         src="./assets/images/sphere-restaurant-paris-bouteilles-vins-DSC0471-800x1200.jpg"
+                         data-src="./assets/images/sphere-restaurant-paris-bouteilles-vins-DSC0471-800x1200.jpg"
                          alt="sphere restaurant paris bouteilles vins DSC0471 800x1200 - Sphère, le restaurant Paris gastronomique"
                          title="sphere restaurant paris bouteilles vins DSC0471 800x1200 - Sphère, le restaurant Paris gastronomique">
                 </figure>
             </div>
         </div>
         <div class="section-restaurant__div-others">
-            <h2 class="section-h2" data-aos="zoom-in" data-aos-duration="2000">NOS AUTRES
-                RESTAURANTS &Agrave; PARIS</h2>
+            <h2 id="4" class="section-h2 section-h2__others text-animated-by-word">NOS AUTRES RESTAURANTS &Agrave; PARIS</h2>
         </div>
         <div class="section-restaurant__div-others section-restaurant__div-passionne">
-            <figure data-aos="fade-up" data-aos-duration="2000" data-aos-delay="">
-                <img decoding="async"
+            <figure>
+                <img id="imageContainer" decoding="async"
                      loading="lazy"
-                     src="./assets/images/restaurant-passionne-paris-DSC2575-800x533.webp"
+                     data-src="./assets/images/restaurant-passionne-paris-DSC2575-800x533.webp"
                      alt="Le meilleur de la gastronomie &agrave; Paris au restaurant Passionn&eacute;"
                      title="Le meilleur de la gastronomie &agrave; Paris au restaurant Passionn&eacute;">
             </figure>
-            <h3 class="div-others__h3" data-aos="zoom-in" data-aos-duration="2000">Passionn&eacute;
-                Restaurant</h3>
+            <h3 class="div-others__h3 text-animated-by-word">Passionn&eacute; Restaurant</h3>
             <p class="div-others__p">Men&eacute;e par le talentueux chef japonais Satoshi
                 Horiuchi, cette nouvelle table gastronomique revisite avec panache et modernit&eacute; la
                 gastronomie fran&ccedil;aise tout en respectant les petits producteurs et les saisons.
             </p>
-            <div class="section-cta section-cta-others">
+            <div class="section-cta section-cta-others section-cta-animated">
                 <a href="https://restaurantpassionne.com/"
                    title="Aller vers le site du restaurant" target="blank" rel="noopener">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28.376 26.957" width="28"
@@ -751,8 +746,8 @@
     <div class="footer__div-site-logo">
         <a href="./index.html" class="" rel="home" aria-current="page"
            aria-label="Voir le site : Sphère">
-            <picture data-aos="zoom-in" data-aos-duration="2000">
-                <img src="assets/images/LOGO%20SPHERE%20-%20WEB.svg"
+            <picture>
+                <img id="imageContainer" src="assets/images/LOGO%20SPHERE%20-%20WEB.svg"
                      loading="lazy"
                      alt="SPHERE | Restaurant à Paris, sensation gastronomique dans le 8e"
                      decoding="async">
@@ -778,7 +773,7 @@
                 <li>
                     <a title="Suivez-nous sur Instagram" target="_blank" rel="noopener"
                        href="https://www.instagram.com/sphere.restaurant.paris/">
-                        <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false"
+                        <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img id="imageContainer"" focusable="false"
                              viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12,4.622c2.403,0,2.688,0.009,3.637,0.052c0.877,0.04,1.354,0.187,1.671,0.31c0.42,0.163,0.72,0.358,1.035,0.673 c0.315,0.315,0.51,0.615,0.673,1.035c0.123,0.317,0.27,0.794,0.31,1.671c0.043,0.949,0.052,1.234,0.052,3.637 s-0.009,2.688-0.052,3.637c-0.04,0.877-0.187,1.354-0.31,1.671c-0.163,0.42-0.358,0.72-0.673,1.035 c-0.315,0.315-0.615,0.51-1.035,0.673c-0.317,0.123-0.794,0.27-1.671,0.31c-0.949,0.043-1.233,0.052-3.637,0.052 s-2.688-0.009-3.637-0.052c-0.877-0.04-1.354-0.187-1.671-0.31c-0.42-0.163-0.72-0.358-1.035-0.673 c-0.315-0.315-0.51-0.615-0.673-1.035c-0.123-0.317-0.27-0.794-0.31-1.671C4.631,14.688,4.622,14.403,4.622,12 s0.009-2.688,0.052-3.637c0.04-0.877,0.187-1.354,0.31-1.671c0.163-0.42,0.358-0.72,0.673-1.035 c0.315-0.315,0.615-0.51,1.035-0.673c0.317-0.123,0.794-0.27,1.671-0.31C9.312,4.631,9.597,4.622,12,4.622 M12,3 C9.556,3,9.249,3.01,8.289,3.054C7.331,3.098,6.677,3.25,6.105,3.472C5.513,3.702,5.011,4.01,4.511,4.511 c-0.5,0.5-0.808,1.002-1.038,1.594C3.25,6.677,3.098,7.331,3.054,8.289C3.01,9.249,3,9.556,3,12c0,2.444,0.01,2.751,0.054,3.711 c0.044,0.958,0.196,1.612,0.418,2.185c0.23,0.592,0.538,1.094,1.038,1.594c0.5,0.5,1.002,0.808,1.594,1.038 c0.572,0.222,1.227,0.375,2.185,0.418C9.249,20.99,9.556,21,12,21s2.751-0.01,3.711-0.054c0.958-0.044,1.612-0.196,2.185-0.418 c0.592-0.23,1.094-0.538,1.594-1.038c0.5-0.5,0.808-1.002,1.038-1.594c0.222-0.572,0.375-1.227,0.418-2.185 C20.99,14.751,21,14.444,21,12s-0.01-2.751-0.054-3.711c-0.044-0.958-0.196-1.612-0.418-2.185c-0.23-0.592-0.538-1.094-1.038-1.594 c-0.5-0.5-1.002-0.808-1.594-1.038c-0.572-0.222-1.227-0.375-2.185-0.418C14.751,3.01,14.444,3,12,3L12,3z M12,7.378 c-2.552,0-4.622,2.069-4.622,4.622S9.448,16.622,12,16.622s4.622-2.069,4.622-4.622S14.552,7.378,12,7.378z M12,15 c-1.657,0-3-1.343-3-3s1.343-3,3-3s3,1.343,3,3S13.657,15,12,15z M16.804,6.116c-0.596,0-1.08,0.484-1.08,1.08 s0.484,1.08,1.08,1.08c0.596,0,1.08-0.484,1.08-1.08S17.401,6.116,16.804,6.116z"></path>
                         </svg>
@@ -788,7 +783,7 @@
                 <li>
                     <a title="Suivez-nous sur Youtube" target="_blank" rel="noopener"
                        href="https://www.youtube.com/@lesmeilleursrestaurantsdeparis">
-                        <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false"
+                        <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img id="imageContainer"" focusable="false"
                              viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21.8,8.001c0,0-0.195-1.378-0.795-1.985c-0.76-0.797-1.613-0.801-2.004-0.847c-2.799-0.202-6.997-0.202-6.997-0.202 h-0.009c0,0-4.198,0-6.997,0.202C4.608,5.216,3.756,5.22,2.995,6.016C2.395,6.623,2.2,8.001,2.2,8.001S2,9.62,2,11.238v1.517 c0,1.618,0.2,3.237,0.2,3.237s0.195,1.378,0.795,1.985c0.761,0.797,1.76,0.771,2.205,0.855c1.6,0.153,6.8,0.201,6.8,0.201 s4.203-0.006,7.001-0.209c0.391-0.047,1.243-0.051,2.004-0.847c0.6-0.607,0.795-1.985,0.795-1.985s0.2-1.618,0.2-3.237v-1.517 C22,9.62,21.8,8.001,21.8,8.001z M9.935,14.594l-0.001-5.62l5.404,2.82L9.935,14.594z"></path>
                         </svg>
@@ -887,18 +882,20 @@
     </div>
 </div>
 <div class="loader">
-    <img src="./assets/images/logo-sphere-blanc-web.svg"
+    <img id="imageContainer" data-src="./assets/images/logo-sphere-blanc-web.svg"
          width="156"
          height="130"
          class="custom-logo" alt="SPHERE | Restaurant à Paris, sensation gastronomique dans le 8e"
          fetchpriority="high" title="logo-blanc-sphere">
 </div>
 </body>
+<script src="./assets/scripts/lazy-load.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="./assets/scripts/burger-menu.js"></script>
-<script src="./assets/scripts/navbar.js"></script>
-<script src="./assets/scripts/image-horizontal-parallax.js"></script>
-<script src="./assets/scripts/cursor.js"></script>
-<script src="./assets/scripts/resize.js"></script>
+<script src="./assets/scripts/burger-menu.js" type="module" defer></script>
+<script src="./assets/scripts/navbar.js" type="module"></script>
+<script src="./assets/scripts/image-horizontal-parallax.js" type="module" defer></script>
+<script src="./assets/scripts/cursor.js" type="module" defer></script>
+<script src="./assets/scripts/resize.js" type="module"></script>
+<script src="./assets/scripts/GSAP.js" type="module" defer></script>
 </html>
