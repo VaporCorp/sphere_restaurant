@@ -10,6 +10,8 @@
     font-size: 70px;
 
     .marquee__inner {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         gap: 40px;
     }
@@ -60,22 +62,45 @@
     background-color: #bd9561;
     top: 0;
     left:0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
     height: 100vh;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: auto 0 30px auto;
     padding: 10vh 15vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 
     div ul {
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
         align-items: flex-end;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         list-style: none;
         margin: auto 0 30px auto;
@@ -98,9 +123,16 @@
         }
     }
     .menu-address {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -ms-flex-line-pack: end;
         align-content: flex-end;
     }
     .address {
@@ -129,6 +161,8 @@
         position: absolute;
         top: 50%;
         left: 10vw;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
         li {
             a {
@@ -163,7 +197,10 @@
     font-family: Saol-Display, serif;
 }
 .marquee__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-animation: scrolling 8s linear infinite;
     animation: scrolling 8s linear infinite;
 }
 .marquee-text {
@@ -171,10 +208,20 @@
 }
 
 .primary-navigation>div>.menu-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     list-style: none;
     margin: auto 0 30px auto;
@@ -183,11 +230,24 @@
     position: relative;
 }
 
-@keyframes scrolling {
+@-webkit-keyframes scrolling {
     0% {
+        -webkit-transform: translateX(0);
         transform: translateX(0);
     }
     100% {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrolling {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
     }
 }
@@ -200,6 +260,8 @@
             position: relative;
             top: 50%;
             left: unset;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
             align-items: flex-end;
         }
         div ul:not(.secondary-menu) {
@@ -211,7 +273,7 @@
         }
         .address {
             span, small {
-            display: inline-block;
+                display: inline-block;
             }
             small {
                 font-size: 80%;

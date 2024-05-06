@@ -29,7 +29,11 @@
         pointer-events: none;
         background: #fff;
         mix-blend-mode: difference;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        -webkit-transform-origin: center;
+        -ms-transform-origin: center;
         transform-origin: center;
     }
 
@@ -42,7 +46,11 @@
     }
 
     .cursor .hovered {
+        -webkit-transform: scale(1.9) translate(-25%, -25%);
+        -ms-transform: scale(1.9) translate(-25%, -25%);
         transform: scale(1.9) translate(-25%, -25%);
+        -webkit-transform-origin: center;
+        -ms-transform-origin: center;
         transform-origin: center;
     }
 }

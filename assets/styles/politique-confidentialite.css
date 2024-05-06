@@ -11,8 +11,12 @@ img {
 .header-chief {
     position: relative;
     min-height: 100svh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 0;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     padding-bottom: 10vh;
     .div-slide__title-chief {
@@ -40,7 +44,9 @@ img {
                 width: 100% !important;
                 height: 100% !important;
                 max-width: 100% !important;
+                -o-object-fit: cover;
                 object-fit: cover;
+                -o-object-position: center center;
                 object-position: center center;
             }
         }
@@ -78,14 +84,26 @@ img {
     }
 
     .section-chief__div-desc {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         position: relative;
         margin: 70px auto 135px auto;
         .div-figure-dish {
+            -webkit-box-ordinal-group: 0;
+            -ms-flex-order: -1;
             order: -1;
+            -ms-flex-item-align: end;
             align-self: flex-end;
         }
 
@@ -94,6 +112,7 @@ img {
         }
 
         .div-desc__div-text {
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
             background: #FFF;
             width: 40%;
@@ -123,18 +142,26 @@ img {
 
 
     .section-chief__div-dishes {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         gap: 70px;
         margin: 135px 2rem;
         .div-dishes__figure:nth-of-type(odd) {
+            -webkit-transform: translateY(-1rem);
+            -ms-transform: translateY(-1rem);
             transform: translateY(-1rem);
         }
 
         .div-dishes__figure:nth-of-type(even) {
+            -webkit-transform: translateY(1rem);
+            -ms-transform: translateY(1rem);
             transform: translateY(1rem);
         }
 
         .div-dishes__figure {
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
             flex-grow: 1;
             gap: 60px;
         }
@@ -237,7 +264,10 @@ img {
         }
 
         & .header__div--fame-logos {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
         }
     }

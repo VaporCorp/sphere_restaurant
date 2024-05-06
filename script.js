@@ -1,4 +1,4 @@
-/* Navbar */
+/*/!* Navbar *!/
 
 let header = document.getElementById("header__navbar");
 let scrollDistOpen = 200;
@@ -12,7 +12,7 @@ window.addEventListener("scroll", function() {
     }
 });
 
-/* Burger menu */
+/!* Burger menu *!/
 
 const menuBtn = document.querySelector('.menu-btn');
 const navBar = document.querySelector('.header__div-bar');
@@ -24,7 +24,7 @@ menuBtn.addEventListener('click', () => {
     menu.classList.toggle('open');
 });
 
-/* Cursor */
+/!* Cursor *!/
 
 const delay = 250
 
@@ -68,7 +68,7 @@ window.addEventListener("mousemove", (e) => {
     throttle(getDimensions(e), delay)
 });
 
-/* Image scroll and mouse track */
+/!* Image scroll and mouse track *!/
 
 const gallery = document.querySelector('.section-chief__div-dishes');
 gallery.addEventListener('mousemove', function(event) {
@@ -82,4 +82,27 @@ gallery.addEventListener('mousemove', function(event) {
     images.forEach(function(image) {
         image.style.transform = `translate3d(-${translateX}px, 0px, 0px)`;
     });
-});
+});*/
+
+const element = document.getElementById('section-chief__div-dishes');
+const jsFile = './assets/scripts/image-horizontal-parallax.js'; // Remplacez par le chemin vers votre fichier JavaScript
+
+function loadJS(file) {
+    const script = document.createElement('script');
+    script.src = file;
+    document.body.appendChild(script);
+}
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+                loadJS(jsFile);
+                observer.disconnect();
+            }
+        });
+    },
+    { rootMargin: '-200px 0px' } // Vérifier si l'élément est à 200px en haut du viewport
+);
+
+observer.observe(element);

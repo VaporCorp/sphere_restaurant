@@ -16,10 +16,14 @@ body {
     background-color: #BD9561;
     z-index: 9999;
     img {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         position: absolute;
         top: 50%;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%) scale(2);
+        -ms-transform: translate(-50%, -50%) scale(2);
         transform: translate(-50%, -50%) scale(2);
     }
 }
