@@ -1,95 +1,13 @@
-/*/!* Navbar *!/
-
-let header = document.getElementById("header__navbar");
-let scrollDistOpen = 200;
-
-window.addEventListener("scroll", function() {
-    let scrollDist = window.scrollY;
-    if (scrollDist > scrollDistOpen) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-});
-
-/!* Burger menu *!/
-
-const menuBtn = document.querySelector('.menu-btn');
-const navBar = document.querySelector('.header__div-bar');
-const menu = document.querySelector('.menu');
-
-menuBtn.addEventListener('click', () => {
-    navBar.classList.toggle('open');
-    menuBtn.classList.toggle('open');
-    menu.classList.toggle('open');
-});
-
-/!* Cursor *!/
-
-const delay = 250
-
-const cursor = document.getElementById("custom-cursor")
-
-const links = document.querySelectorAll("a");
-
-links.forEach(link => {
-    link.addEventListener("mouseenter", function() {
-        cursor.classList.add("hovered");
-    });
-
-    link.addEventListener("mouseleave", function() {
-        cursor.classList.remove("hovered");
-    });
-});
-
-function getDimensions(e) {
-    cursor.style.top = `${e.clientY}px` // -25px for the size of the circle
-    cursor.style.left = `${e.clientX}px`
-}
-
-window.addEventListener("mousemove", (e) => {
-    getDimensions(e)
-});
-
-function throttle(callback, limit) {
-    let wait = false
-    return function () {
-        if (!wait) {
-            callback.apply(null, arguments)
-            wait = true
-            setTimeout(function () {
-                wait = false
-            }, limit)
-        }
-    }
-}
-
-window.addEventListener("mousemove", (e) => {
-    throttle(getDimensions(e), delay)
-});
-
-/!* Image scroll and mouse track *!/
-
-const gallery = document.querySelector('.section-chief__div-dishes');
-gallery.addEventListener('mousemove', function(event) {
-    const mouseX = event.clientX - gallery.offsetLeft;
-
-    const proportion = mouseX / gallery.offsetWidth;
-
-    const translateX = proportion * 340;
-
-    const images = document.querySelectorAll('.div-dishes__figure');
-    images.forEach(function(image) {
-        image.style.transform = `translate3d(-${translateX}px, 0px, 0px)`;
-    });
-});*/
-
 const element = document.getElementById('section-chief__div-dishes');
-const jsFile = './assets/scripts/image-horizontal-parallax.js'; // Remplacez par le chemin vers votre fichier JavaScript
+const jsFile = './assets/scripts/image-horizontal-parallax.js';
 
 function loadJS(file) {
     const script = document.createElement('script');
     script.src = file;
+    script.onload = function() {
+        // Call the main function or initialize your script here
+        initImageHorizontalParallax();
+    };
     document.body.appendChild(script);
 }
 
@@ -102,7 +20,37 @@ const observer = new IntersectionObserver(
             }
         });
     },
-    { rootMargin: '-200px 0px' } // Vérifier si l'élément est à 200px en haut du viewport
+    { rootMargin: '-200px 0px' }
 );
 
 observer.observe(element);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section[data-css]");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting || entry.intersectionRatio > 0) {
+                    const section = entry.target;
+                    const cssFile = section.getAttribute("data-css");
+                    loadCSS(cssFile);
+                    observer.unobserve(section);
+                }
+            });
+        },
+        { rootMargin: "200px 0px" } // Ajuster la valeur pour définir à quelle distance la section doit être du viewport
+    );
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+
+    function loadCSS(file) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = file;
+        document.head.appendChild(link);
+    }
+});

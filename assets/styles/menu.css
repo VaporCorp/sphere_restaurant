@@ -4,7 +4,9 @@
     z-index: 2;
     color: #BD9561;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
+    font-family: Saol-Display, serif;
+    padding: 0 30px;
 }
 
 .header-chief__div-slide {

@@ -38,19 +38,19 @@
     <link rel="stylesheet" href="../assets/styles/burger-menu.css">
     <link rel="stylesheet" href="../assets/styles/header.css">
     <link rel="stylesheet" href="../assets/styles/menu.css">
-    <link rel="stylesheet" href="../assets/styles/index.css">
+    <link rel="stylesheet" href="../assets/styles/globals.css">
+    <link rel="stylesheet" href="../assets/styles/index/section-menu.css">
     <link rel="stylesheet" href="../assets/styles/footer.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-<div class="header__div-bar" id="header__navbar">
+<header class="header__div-bar" id="header__navbar">
     <nav class="header__nav--bookingandgift section-cta section-cta-others">
-        <a id="header__button--booking" class="header__button--booking"  data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200"
+        <a id="header__button--booking" class="header__button--booking"
            href="https://bookings.zenchef.com/results?rid=358497"
            title="Réservation" target="_blank" rel="noopener">
             <span class="button-label">Réservation</span>
         </a>
-        <a id="header__button--gift" class="header__button--gift" data-aos="fade-right" data-aos-duration="2000"
+        <a id="header__button--gift" class="header__button--gift"
            href="https://bookings.zenchef.com/shop?rid=358497"
            title="Bon cadeau"
            target="_blank" rel="noopener">
@@ -58,7 +58,7 @@
         </a>
     </nav>
     <div class="header__div--logo">
-        <a href="../index.html" class="custom-logo-link" rel="home" aria-current="page" data-aos="fade-down" data-aos-duration="2000">
+        <a href="../index.html" class="custom-logo-link" rel="home" aria-current="page">
             <img src="../assets/images/logo-sphere-blanc-web.svg"
                  width="156"
                  height="130"
@@ -70,25 +70,24 @@
         <button id="header__button--menu" class="header__button--menu menu-btn" aria-controls="burger-menu"
                 aria-label="Menu button"><span class="menu-button-text">Menu</span></button>
     </div>
-</div>
+</header>
 <header class="header header-chief" id="header">
     <div class="header-chief__div-slide">
         <figure class="div-slide__figure">
-            <img src="../assets/images/restaurant-paris-sphere-plat-DSC6519.webp"
+            <img id="imageContainer" data-src="../assets/images/restaurant-paris-sphere-plat-DSC6519.webp"
                  class="figure__img"
                  alt="sphere restaurant paris chef DSC0523 - Sphère, le restaurant Paris gastronomique"
                  decoding="async"
-                 loading="lazy"
                  title="Sphère, le restaurant Paris gastronomique">
         </figure>
     </div>
-    <h1 class="div-slide__title-menu h1" data-aos="zoom-in" data-aos-duration="2000">La Carte du Restaurant Sphère</h1>
+    <h1 class="div-slide__title-menu h1">La Carte du Restaurant Sphère</h1>
 </header>
 <main>
     <section class="main__section-menu">
         <div class="section-menu__div">
             <div class="section-menu__div-big-title">
-                <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">MENU CARTE BLANCHE</h3></div>
+                <h3 class="section-menu__title section-menu__title-h3 section-h3">MENU CARTE BLANCHE</h3></div>
             <p class="section-menu__text">
                 Dernières commandes en semaine à 22h et en week-end 22h30
             </p>
@@ -123,7 +122,7 @@
                 Tous les soirs jusqu’à 22h15, tous les Samedis et Dimanches jusqu’à 14h00
             </p>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">ACCORD METS ET VINS</h3>
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">ACCORD METS ET VINS</h3>
         <div class="section-menu__div-part">
             <article class="section-menu__article-menu">
                 <p class="article-menu__p-item">
@@ -144,11 +143,11 @@
                 </p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">A LA CARTE</h3>
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">A LA CARTE</h3>
         <p class="section-menu__text">
             Dernières commandes en semaine à 22h et en week-end 22h30
         </p>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">ENTRÉES</h3>
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">ENTRÉES</h3>
         <div class="section-menu__div-part">
             <article class="section-menu__article-menu">
                 <p class="article-menu__p-item">
@@ -175,7 +174,7 @@
                     Porto rouge au cumin</p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">PLATS</h3>
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">PLATS</h3>
         <div class="section-menu__div-part">
             <article class="section-menu__article-menu">
                 <p class="article-menu__p-item">
@@ -194,7 +193,7 @@
                     main de Bouddha</p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">DESSERTS</h3>
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">DESSERTS</h3>
         <p class="section-menu__text">Notre chef pâtissier vous propose</p>
         <div class="section-menu__div-part">
             <article class="section-menu__article-menu">
@@ -230,7 +229,7 @@
                 </p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">MENU
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">MENU
             DÉJEUNER</h3>
         <p class="section-menu__text">
             (Uniquement le midi en semaine, hors jours fériés)
@@ -252,7 +251,7 @@
                     notés d’un Astérisque (*)</p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">
             ENTRÉES</h3>
         <div class="section-menu__div-part">
             <article class="section-menu__article-menu">
@@ -281,7 +280,7 @@
                     pistaches au vinaigre, baies de la passion</p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">
             PLATS</h3>
         <div class="section-menu__div-part">
             <article class="section-menu__article-menu">
@@ -320,7 +319,7 @@
                     de viande au foie gras</p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">DESSERTS</h3>
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">DESSERTS</h3>
         <p class="section-menu__text">Notre chef pâtissier vous propose</p>
         <div class="section-menu__div-part">
             <article class="section-menu__article-menu">
@@ -366,7 +365,7 @@
                 </p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">
             MENU CARTE
             BLANCHE</h3>
 
@@ -385,7 +384,7 @@
                 </p>
             </article>
         </div>
-        <h3 class="section-menu__title section-menu__title-h3 section-h3" data-aos="zoom-in" data-aos-duration="2000">
+        <h3 class="section-menu__title section-menu__title-h3 section-h3">
             ACCORD METS ET
             VINS</h3>
         <div class="section-menu__div-part">
@@ -438,11 +437,10 @@
 </main>
 <footer class="footer">
     <div class="footer__div-site-logo">
-        <a href="https://restaurantsphere.com" class="" rel="home" aria-current="page" data-aos="fade-up" data-aos-duration="2000"
+        <a href="https://restaurantsphere.com" class="" rel="home" aria-current="page"
            aria-label="Voir le site : Sphère">
             <picture class="">
-                <img src="https://restaurantsphere.com/app/themes/sphere/assets/images/logo-black-sphere.webp"
-                     loading="lazy"
+                <img id="imageContainer" data-src="../assets/images/logo-black-sphere.webp"
                      alt="SPHERE | Restaurant à Paris, sensation gastronomique dans le 8e"
                      decoding="async">
             </picture>
@@ -575,14 +573,11 @@
         <div class="cursor__side cursor__side--right"></div>
     </div>
 </div>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
-<script src="../../assets/scripts/burger-menu.js"></script>
-<script src="../../assets/scripts/navbar.js"></script>
-<script src="../../assets/scripts/cursor.js"></script>
-<script src="../../assets/scripts/image-horizontal-parallax.js"></script>
-<script src="../../assets/scripts/resize.js"></script>
+<script src="../assets/scripts/burger-menu.js"></script>
+<script src="../assets/scripts/navbar.js"></script>
+<script src="../assets/scripts/cursor.js"></script>
+<script src="../assets/scripts/lazy-load.js"></script>
+<script src="../assets/scripts/image-horizontal-parallax.js"></script><!--
+<script src="../../assets/scripts/resize.js"></script>-->
 </body>
 </html>

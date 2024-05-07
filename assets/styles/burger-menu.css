@@ -18,7 +18,6 @@
 }
 
 .menu {
-    display: none;
     .marquee__cta {
         text-decoration: none;
         &:before, &:after {

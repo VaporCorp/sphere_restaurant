@@ -1,23 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const imageContainer = document.getElementById("imageContainer");
+function lazyLoadImages() {
     const images = document.querySelectorAll("img[data-src]");
 
-    function lazyLoadImages() {
-        images.forEach(img => {
-            const rect = img.getBoundingClientRect();
-            if(img.src === "") {
-                if (rect.top >= 0 && rect.top <= window.innerHeight + 500) {
-                    // Image is within viewport
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
                     img.src = img.getAttribute("data-src");
                     img.removeAttribute("data-src");
+                    observer.unobserve(img);
                 }
-            }
-        });
-    }
+            });
+        },
+        { rootMargin: "500px 0px" }
+    );
 
-    // Initially load images in view
-    lazyLoadImages();
+    images.forEach((img) => {
+        observer.observe(img);
+    });
+}
 
-    // Load images when scrolling
-    window.addEventListener("scroll", lazyLoadImages);
-});
+document.addEventListener("DOMContentLoaded", lazyLoadImages);
