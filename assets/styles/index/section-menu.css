@@ -138,8 +138,4 @@
         -ms-flex-negative: unset;
         flex-shrink: unset;
     }
-
-    .main__section-menu .section-menu__div-part {
-        max-width: min(calc(100vw - 4 * 30px ), 700px);
-    }
 }

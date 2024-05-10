@@ -30,3 +30,111 @@
         }
     }
 }
+
+.main__section-menu {
+    max-width: min(calc(100vw - 2 * 30px ), 700px);
+    margin: 0 auto;
+}
+
+.main__section-chief {
+    overflow: hidden;
+}
+
+.main__section-chief .section-chief__div-dishes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin: 135px 0;
+    width: 120%;
+}
+
+.main__section-chief .section-chief__div-dishes .div-dishes__figure {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 23.7777%;
+    margin-left: 1.1111115%;
+    margin-right: 1.1111115%;
+}
+
+.section-double-images {
+    margin-top: 3rem;
+}
+
+.double-images__droite {
+    width: 50%;
+    position: relative;
+    margin-left: auto;
+}
+
+.double-images__droite:before {
+    display: block;
+    position: relative;
+    content: "";
+    width: 100%;
+    padding-top: calc((5 / 4)* 100%);
+}
+
+.double-images__droite img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+}
+
+.double-images__gauche {
+    width: 40%;
+    position: relative;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.double-images__gauche:before {
+    display: block;
+    position: relative;
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+}
+
+.double-images__gauche img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+}
+
+@media screen and (max-width: 768px) {
+    .main__section-menu {
+        max-width: min(calc(100vw - 4 * 30px ), 750px);
+    }
+
+    .main__section-chief .section-chief__div-dishes {
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto 60px auto;
+    }
+    .main__section-chief .section-chief__div-dishes .div-dishes__figure {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .main__section-menu {
+        max-width: unset;
+    }
+}

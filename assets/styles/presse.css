@@ -14,6 +14,9 @@
         figure {
             max-width: min(calc(100vw - 2 * 30px ), 1080px);
             margin: 0 auto;
+            img {
+                width: unset;
+            }
         }
     }
 
@@ -111,7 +114,6 @@
 }
 
 .div-figure__logo-figaro {
-    max-width: 170px !important;
     margin: 0 auto;
     img {
         width: 100%;

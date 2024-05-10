@@ -6,7 +6,9 @@ body {
 
 }
 
-
+.open {
+    overflow: hidden;
+}
 
 img {
     width: 100%;
@@ -79,7 +81,7 @@ img {
     font-size: 1.25rem;
 }
 
-div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others) {
+div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -91,7 +93,7 @@ div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__di
     margin: 30px 2vw;
 }
 
-div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others)::before, div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others)::after {
+div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content)::before, div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content)::after {
     display: block;
     content: '';
     -webkit-box-flex: 1;
@@ -126,4 +128,49 @@ div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__di
     font-size: 40px;
     font-family: Saol-Display, serif;
     color: var(--brown);
+}
+
+@media screen and (max-width: 992px) {
+    .section-h2:not(.section-chief__title-h2) {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+    .section-h2.section-chief__title-h2 {
+        font-size: 3.75rem;
+    }
+    .section-cta a {
+        font-size: 1.5rem;
+    }
+    .section-h3 {
+        font-size: 1.5rem;
+    }
+    div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others) {
+        padding: unset;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-cta a {
+        margin: 0 auto;
+        width: fit-content;
+    }
+    .section-h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .section-cta a {
+        font-size: 1.5rem;
+    }
+
+    .section-cta.section-cta-others a {
+        font-size: 1.125rem;
+    }
+
+    .section-h2 {
+        font-size: 2.5rem !important;
+    }
 }

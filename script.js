@@ -50,7 +50,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function loadCSS(file) {
         const link = document.createElement("link");
         link.rel = "stylesheet";
-        link.href = file;
+
+        const currentPath = window.location.pathname;
+        const isInPagesDirectory = currentPath.includes("/pages/");
+
+        if (isInPagesDirectory) {
+            link.href = `../${file}`;
+        } else {
+            link.href = file;
+        }
+
         document.head.appendChild(link);
     }
 });

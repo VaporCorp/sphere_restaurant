@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="../assets/styles/header.css">
     <link rel="stylesheet" href="../assets/styles/restaurant.css">
     <link rel="stylesheet" href="../assets/styles/footer.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/globals.css">
 </head>
 <body>
 <div class="header__div-bar" id="header__navbar">
@@ -97,10 +97,10 @@
         <div class="section-presentation__div-left">
             <div class="div-left__title">
                 
-                 <h1><span class="title__span title__span-gold" data-aos="fade-up-right" data-aos-duration="1500">SPHERE :  </span>
-                    <span class="title__span title__span-brown" data-aos="fade-up-right" data-aos-duration="1500">LE  RESTAURANT </span>
-                    <span class="title__span title__span-gold" data-aos="fade-up-right" data-aos-duration="1500"> GASTRONOMIE </span>
-                    <span class="title__span title__span-brown" data-aos="fade-up-right" data-aos-duration="1500"> À PARIS</span>
+                 <h1><span class="title__span title__span-gold">SPHERE :  </span>
+                    <span class="title__span title__span-brown">LE  RESTAURANT </span>
+                    <span class="title__span title__span-gold"> GASTRONOMIE </span>
+                    <span class="title__span title__span-brown"> À PARIS</span>
 
                 </h1>
             </div>
@@ -229,7 +229,7 @@
 </main>
 <footer class="footer">
     <div class="footer__div-site-logo">
-        <a href="https://restaurantsphere.com" class="" rel="home" aria-current="page" data-aos="fade-up" data-aos-duration="2000"
+        <a href="https://restaurantsphere.com" class="" rel="home" aria-current="page"
            aria-label="Voir le site : Sphère">
             <picture class="">
                 <img src="../assets/images/logo-black-sphere.webp"
@@ -305,21 +305,26 @@
     <nav aria-label="Menu principal">
         <div class="menu-address">
             <ul>
-                <li>
+                <li class="nav-item">
                     <a href="menu.html">La Carte</a>
+                    <div class="image-container"></div>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="restaurant-gastronomique.html">Le Restaurant</a>
+                    <div class="image-container"></div>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a target="_blank" rel="noopener" href="https://bookings.zenchef.com/shop?rid=358497">Offrez le
                         Sphère</a>
+                    <div class="image-container"></div>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="./presse.html">La presse</a>
+                    <div class="image-container"></div>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="contact.html">Contact</a>
+                    <div class="image-container"></div>
                 </li>
             </ul>
             <ul class="secondary-menu">
@@ -365,10 +370,6 @@
         <div class="cursor__side cursor__side--right"></div>
     </div>
 </div>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 <script src="../../assets/scripts/burger-menu.js"></script>
 <script src="../../assets/scripts/navbar.js"></script>
 <script src="../../assets/scripts/cursor.js"></script>

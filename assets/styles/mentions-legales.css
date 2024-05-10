@@ -8,7 +8,9 @@ img {
 }
 
 .main__section-legal-mentions {
-    text-align: center;
+    text-align: left;
+    max-width: 65%;
+    margin: 0 auto;
     .section-h3:first-of-type{
         margin-top: 135px;
     }
@@ -34,90 +36,6 @@ img {
 
         span {
             color: var(--gold);
-        }
-    }
-
-    .section-legal-mentions__div-desc {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        position: relative;
-        margin: 70px auto 135px auto;
-        .div-figure-dish {
-            -webkit-box-ordinal-group: 0;
-            -ms-flex-order: -1;
-            order: -1;
-            -ms-flex-item-align: end;
-            align-self: flex-end;
-        }
-
-        .div-figure-legal-mentions {
-            margin: -33.3333% 9vw 0 auto;
-        }
-
-        .div-desc__div-text {
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            background: #FFF;
-            width: 40%;
-            padding: 45px 5vw;
-            top: 0;
-            bottom: auto;
-            left: 0;
-            position: absolute;
-            .div-text__p {
-                font-family: Futura-Std, sans-serif;
-                word-wrap: break-word;
-                line-height: 2;
-                strong {
-                    color: var(--gold);
-                }
-            }
-        }
-    }
-
-    .div-desc__div-figure.div-figure-dish {
-        width: 75%;
-    }
-
-    .div-desc__div-figure.div-figure-legal-mentions {
-        width: 33%;
-    }
-
-
-    .section-legal-mentions__div-dishes {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        gap: 70px;
-        margin: 135px 2rem;
-        .div-dishes__figure:nth-of-type(odd) {
-            -webkit-transform: translateY(-1rem);
-            -ms-transform: translateY(-1rem);
-            transform: translateY(-1rem);
-        }
-
-        .div-dishes__figure:nth-of-type(even) {
-            -webkit-transform: translateY(1rem);
-            -ms-transform: translateY(1rem);
-            transform: translateY(1rem);
-        }
-
-        .div-dishes__figure {
-            -webkit-box-flex: 1;
-            -ms-flex-positive: 1;
-            flex-grow: 1;
-            gap: 60px;
         }
     }
 }

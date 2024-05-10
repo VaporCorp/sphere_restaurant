@@ -35,8 +35,8 @@ window.addEventListener("DOMContentLoaded", function() {
 
     ScrollTrigger.create({
         trigger: ".div-left__title",
-        start: "top-=100 center",
-        end: "bottom bottom",
+        start: "top bottom",
+        end: "bottom top",
         onEnter: () => animation.play(),
         onEnterBack: () => animation.play(),
     });
@@ -56,31 +56,38 @@ window.addEventListener("DOMContentLoaded", function() {
             paused: true
         });
 
-        ScrollTrigger.create({
-            trigger: element,
-            start: "top-=100 center",
-            end: "bottom center",
-            onEnter: () => animation.play(),
-            once: true
-        });
+        return animation;
     };
 
-    h2Elements.forEach(h2 => {
+    const observerTitle = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('text-animated-by-word')) {
+                    createAnimation(entry.target, '.title__letter', 1.5, 0.1).play();
+                } else if (entry.target.classList.contains('h3-animated-by-word')) {
+                    createAnimation(entry.target, '.title__word', 1.5, 0.05).play();
+                }
+                observerTitle.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5, rootMargin: "250px 0px 0px 0px" });
+
+    h2Elements.forEach((h2) => {
         let newContent = '';
-        h2.textContent.trim().split(' ').forEach(word => {
-            newContent += `<span class="title__word">${word.split('').map(letter => `<span class="title__letter">${letter === ' ' ? '&nbsp;' : letter}</span>`).join('')}</span> `;
+        h2.textContent.trim().split(' ').forEach((word) => {
+            newContent += `<span class="title__word">${word.split('').map((letter) => `<span class="title__letter">${letter === ' ' ? '&nbsp;' : letter}</span>`).join('')}</span> `;
         });
         h2.innerHTML = newContent;
-        createAnimation(h2, '.title__letter', 1.5, 0.1);
+        observerTitle.observe(h2);
     });
 
-    h3Elements.forEach(h3 => {
+    h3Elements.forEach((h3) => {
         let newContent = '';
-        h3.textContent.trim().split(' ').forEach(word => {
+        h3.textContent.trim().split(' ').forEach((word) => {
             newContent += `<span class="title__word">${word}</span> `;
         });
         h3.innerHTML = newContent;
-        createAnimation(h3, '.title__word', 1.5, 0.05);
+        observerTitle.observe(h3);
     });
 
     const titleH2_Main = document.querySelector('.div-left__h2');
@@ -131,25 +138,79 @@ window.addEventListener("DOMContentLoaded", function() {
         x: `${window.innerWidth > 992 ? -30 : -10}`,
     });
 
-    function createScrollAnimation(target, yValue, scrollTriggerTarget = '') {
-        gsap.from(target, {
-            y: yValue,
-            scrollTrigger: {
-                trigger: scrollTriggerTarget !== '' ? scrollTriggerTarget : target,
-                scrub: true,
-                start: "top bottom",
-                end: "bottom top",
+    function onImageLoad(image, callback) {
+        if (image.complete && image.naturalWidth !== 0) {
+            callback();
+        } else {
+            image.addEventListener("load", callback);
+        }
+    }
+
+    function createScrollAnimation(target, yValue, scrollTriggerTarget, callback) {
+        const targetElement = document.querySelector(target);
+        const image = targetElement.querySelector("#imageContainer");
+        const scrollTriggerElement = scrollTriggerTarget !== '' ? document.querySelector(scrollTriggerTarget) : targetElement;
+
+        if (targetElement && scrollTriggerElement) {
+            onImageLoad(image, () => {
+                callback();
+            });
+        }
+    }
+
+    function animateElement(target, yValue, scrollTriggerTarget = '') {
+        gsap.fromTo(
+            target,
+            {
+                y: -yValue,
             },
+            {
+                y: yValue,
+                scrollTrigger: {
+                    trigger: scrollTriggerTarget !== '' ? scrollTriggerTarget : target,
+                    scrub: true,
+                    start: "top-=100 bottom",
+                    end: "bottom top",
+                },
+            }
+        );
+    }
+
+    createScrollAnimation(".section-menu__div-figure", -60, "", () => {
+        animateElement(".section-menu__div-figure", -60);
+    });
+
+    createScrollAnimation(".div-figure-dish", -60, "", () => {
+        animateElement(".div-figure-dish", -60);
+    });
+
+    createScrollAnimation(".div-figure-chief", -60, "", () => {
+        animateElement(".div-figure-chief", -60);
+    });
+
+    if(!(window.innerWidth < 768)){
+        createScrollAnimation(".div-dishes__figure-1", 150, "", () => {
+            animateElement(".div-dishes__figure-1", 150);
+        });
+
+        createScrollAnimation(".div-dishes__figure-2", 80, "", () => {
+            animateElement(".div-dishes__figure-2", 80);
+        });
+
+        createScrollAnimation(".div-dishes__figure-3", 110, "", () => {
+            animateElement(".div-dishes__figure-3", 110);
+        });
+
+        createScrollAnimation(".div-dishes__figure-4", 60, "", () => {
+            animateElement(".div-dishes__figure-4", 60);
         });
     }
 
-    createScrollAnimation(".section-menu__div-figure", -250);
-    createScrollAnimation(".div-figure-dish", 100);
-    createScrollAnimation(".div-figure-chief", 200);
-    createScrollAnimation(".div-dishes__figure-1", 150);
-    createScrollAnimation(".div-dishes__figure-2", 80);
-    createScrollAnimation(".div-dishes__figure-3", 110);
-    createScrollAnimation(".div-dishes__figure-4", 60);
-    createScrollAnimation(".double-images__droite", -100, ".section-double-images");
-    createScrollAnimation(".double-images__gauche", -60, ".section-double-images");
+    createScrollAnimation(".double-images__droite", -100, ".section-double-images", () => {
+        animateElement(".double-images__droite", -100, ".section-double-images");
+    });
+
+    createScrollAnimation(".double-images__gauche", -60, ".section-double-images", () => {
+        animateElement(".double-images__gauche", -60, ".section-double-images");
+    });
 })
