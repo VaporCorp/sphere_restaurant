@@ -81,7 +81,7 @@ img {
     font-size: 1.25rem;
 }
 
-div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content) {
+div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content):not(.section-details__div-content) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -93,7 +93,7 @@ div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__di
     margin: 30px 2vw;
 }
 
-div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content)::before, div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content)::after {
+div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content):not(.section-details__div-content)::before, div:has(> .section-h2):not(.section-restaurant__div):not(.section-restaurant__div-others):not(.section-blog__content):not(.section-details__div-content)::after {
     display: block;
     content: '';
     -webkit-box-flex: 1;

@@ -5,9 +5,10 @@
 
 .marquee {
     position: absolute;
-    bottom: 9px;
+    top: calc(100dvh - 9px);
     right: 0;
     font-size: 70px;
+    transform: translateY(-100%);
 
     .marquee__inner {
         display: -webkit-box;
@@ -346,7 +347,7 @@
         }
 
         div ul.secondary-menu {
-            margin-top: 65px;
+            margin-top: 35px;
         }
         & div ul {
             text-align: center;

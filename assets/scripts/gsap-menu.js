@@ -86,12 +86,4 @@ window.addEventListener("DOMContentLoaded", function() {
             animateElement(".div-dishes__figure-4", 60);
         });
     }
-
-    createScrollAnimation(".double-images__droite", -60, ".section-double-images", () => {
-        animateElement(".double-images__droite", -60, ".section-double-images");
-    });
-
-    createScrollAnimation(".double-images__gauche", -100, ".section-double-images", () => {
-        animateElement(".double-images__gauche", -100, ".section-double-images");
-    });
 })
