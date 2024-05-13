@@ -176,6 +176,24 @@ window.addEventListener("DOMContentLoaded", function() {
         );
     }
 
+    createScrollAnimation(".div-right__figure", 20, "", () => {
+        gsap.fromTo(
+            ".div-right__figure",
+            {
+                y: -60,
+            },
+            {
+                y: 0,
+                scrollTrigger: {
+                    trigger: ".div-right__figure",
+                    scrub: true,
+                    start: "top-=100 bottom",
+                    end: "bottom top",
+                },
+            }
+        );
+    });
+
     createScrollAnimation(".section-menu__div-figure", -60, "", () => {
         animateElement(".section-menu__div-figure", -60);
     });

@@ -27,6 +27,17 @@ window.addEventListener("DOMContentLoaded", function() {
         once:true,
     });
 
+    // Sélectionnez le h1 et tous les éléments span dans le h1
+    const h2 = document.querySelector(".section-menu__title-h2");
+
+    ScrollTrigger.create({
+        trigger: h2, // élément qui déclenche l'animation
+        start: "top bottom", // début de la zone de déclenchement
+        end: "bottom top", // fin de la zone de déclenchement
+        onEnter: () => tl.play(), // démarre l'animation lorsque le h1 entre dans la zone de déclenchement
+        once:true,
+    });
+
     gsap.set(".title__span-brown", {x: `${window.innerWidth > 600 ? -30 : -10}`});
 
     gsap.to(".title__span-brown", {
@@ -113,10 +124,10 @@ window.addEventListener("DOMContentLoaded", function() {
     createScrollAnimation(".double-image-no-flex-droite", 50, "", () => {
         animateElement(".double-image-no-flex-droite", 50);
     });
-    createScrollAnimation(".double-image-flex-gauche", -100, "", () => {
-        animateElement(".double-image-flex-gauche", -100);
+    createScrollAnimation(".double-image-flex-gauche", 50, ".section-details__double-image-flex", () => {
+        animateElement(".double-image-flex-gauche", 50);
     });
-    createScrollAnimation(".double-image-flex-droite", -100, "", () => {
-        animateElement(".double-image-flex-droite", -100);
+    createScrollAnimation(".double-image-flex-droite", -30, ".section-details__double-image-flex", () => {
+        animateElement(".double-image-flex-droite", -30);
     });
 })

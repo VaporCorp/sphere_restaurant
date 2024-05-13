@@ -69,6 +69,14 @@ window.addEventListener("DOMContentLoaded", function() {
         );
     }
 
+    createScrollAnimation(".double-images__droite", -50, ".section-double-images", () => {
+        animateElement(".double-images__droite", -50, ".section-double-images");
+    });
+
+    createScrollAnimation(".double-images__gauche", -120, ".section-double-images", () => {
+        animateElement(".double-images__gauche", -120, ".section-double-images");
+    });
+
     if(window.innerWidth > 768) {
         createScrollAnimation(".div-dishes__figure-1", 150, "", () => {
             animateElement(".div-dishes__figure-1", 150);
