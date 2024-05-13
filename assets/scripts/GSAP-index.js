@@ -198,12 +198,12 @@ window.addEventListener("DOMContentLoaded", function() {
         animateElement(".section-menu__div-figure", -60);
     });
 
-    createScrollAnimation(".div-figure-dish", -60, "", () => {
-        animateElement(".div-figure-dish", -60);
+    createScrollAnimation(".div-figure-dish", 40, "", () => {
+        animateElement(".div-figure-dish", 40);
     });
 
-    createScrollAnimation(".div-figure-chief", -60, "", () => {
-        animateElement(".div-figure-chief", -60);
+    createScrollAnimation(".div-figure-chief", -40, "", () => {
+        animateElement(".div-figure-chief", -40);
     });
 
     if(!(window.innerWidth < 768)){
@@ -230,5 +230,9 @@ window.addEventListener("DOMContentLoaded", function() {
 
     createScrollAnimation(".double-images__gauche", -60, ".section-double-images", () => {
         animateElement(".double-images__gauche", -60, ".section-double-images");
+    });
+
+    createScrollAnimation(".section-restaurant__div-passionne", -60, ".section-restaurant__div-passionne", () => {
+        animateElement(".section-restaurant__div-passionne", -60, ".section-restaurant__div-passionne");
     });
 })

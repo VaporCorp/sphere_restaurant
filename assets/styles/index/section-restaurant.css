@@ -90,8 +90,16 @@
     max-width: min(calc(100vw - 60px), 1080px);
 }
 
+.main__section-restaurant .section-restaurant__div-passionne figure {
+    width:90%;
+    margin: 0 auto calc(1.2 * 30px);
+}
+
 .main__section-restaurant .section-restaurant__div-passionne img {
     width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .main__section-restaurant .section-restaurant__div-passionne .div-others__h3 {
