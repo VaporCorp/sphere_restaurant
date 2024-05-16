@@ -142,7 +142,7 @@
         padding: 45px 0;
         position: relative;
     }
-    .main__section-chief .section-chief__div-desc .div-figure-chief {
+    .main__section-chief .section-chief__div-desc .div-desc__div-figure.div-figure-chief {
         margin: -7.5% auto 0 auto;
         width: 45%;
         z-index: 2;

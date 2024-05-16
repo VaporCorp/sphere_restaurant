@@ -194,8 +194,8 @@ window.addEventListener("DOMContentLoaded", function() {
         );
     });
 
-    createScrollAnimation(".section-menu__div-figure", -60, "", () => {
-        animateElement(".section-menu__div-figure", -60);
+    createScrollAnimation(".section-menu__div-figure", 60, "", () => {
+        animateElement(".section-menu__div-figure", 60);
     });
 
     createScrollAnimation(".div-figure-dish", 40, "", () => {
@@ -224,8 +224,8 @@ window.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    createScrollAnimation(".double-images__droite", -100, ".section-double-images", () => {
-        animateElement(".double-images__droite", -100, ".section-double-images");
+    createScrollAnimation(".double-images__droite", -70, ".section-double-images", () => {
+        animateElement(".double-images__droite", -70, ".section-double-images");
     });
 
     createScrollAnimation(".double-images__gauche", -60, ".section-double-images", () => {
